@@ -123,7 +123,7 @@ export default {
 .countainer {
   padding: 15px;
   width: 80%;
-  max-height: 90%;
+  height: 90%;
   background-color: white;
   overflow-y: auto;
 }
