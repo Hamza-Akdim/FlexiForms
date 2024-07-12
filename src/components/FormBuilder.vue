@@ -25,13 +25,14 @@ export default {
 
 <style scoped>
     .container{
-        height: 100%;
+        height: 100vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
     }
     .container1{
         display: flex;
+        padding: 0;
         justify-content: space-between;
         align-items: center;
     }

@@ -1,5 +1,5 @@
 <template>
-  <v-sheet :rounded="true" class="countainer">
+  <div class="countainer">
     <div class="question">
       <v-label>Question*</v-label>
       <v-text-field
@@ -89,7 +89,7 @@
         required
       ></v-text-field>
     </div>
-  </v-sheet>
+  </div>
 </template>
 
 <script>
@@ -121,11 +121,13 @@ export default {
 
 <style>
 .countainer {
+  position: relative;
   padding: 15px;
   width: 80%;
   height: 90%;
   background-color: white;
   overflow-y: auto;
+  border-radius: 8px;
 }
 
 .question {
@@ -143,6 +145,9 @@ export default {
 }
 .inputBtn {
   flex-grow: 1;
+  font-size: 15px;
+  text-transform: none;
+
 }
 .iconBtn {
   margin-left: 4px;

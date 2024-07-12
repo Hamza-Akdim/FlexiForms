@@ -1,7 +1,7 @@
 <template>
-  <v-sheet class="formDispaly">
-    <v-sheet :rounded="true" class="countainer"></v-sheet>
-  </v-sheet>
+  <div class="formDispaly">
+    <div class="countainer"></div>
+  </div>
 </template>
 
 <script>
@@ -23,5 +23,7 @@ export default {
   width: 80%;
   height: 70%;
   background-color: white;
+  border-radius: 8px;
+
 }
 </style>
