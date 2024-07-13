@@ -13,7 +13,7 @@ export default {
 <style>
 .formDispaly {
   width: 50vw;
-  height: 100vh;
+  height: 100%;
   background-color: rgb(129, 110, 110);
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ export default {
 }
 .countainer{
   width: 80%;
-  height: 70%;
+  height: 60%;
   background-color: white;
   border-radius: 8px;
 

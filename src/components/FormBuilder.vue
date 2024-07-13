@@ -32,7 +32,7 @@ export default {
     }
     .container1{
         display: flex;
-        padding: 0;
+        height: 96vh;
         justify-content: space-between;
         align-items: center;
     }

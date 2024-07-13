@@ -89,6 +89,7 @@
         required
       ></v-text-field>
     </div>
+  
   </div>
 </template>
 
@@ -119,14 +120,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .countainer {
-  position: relative;
+  box-shadow : 2px 2px 20px rgba(0,0,0,0.3) ;
   padding: 15px;
   width: 80%;
-  height: 90%;
+  height: 100%;
   background-color: white;
-  overflow-y: auto;
   border-radius: 8px;
 }
 
@@ -145,7 +145,7 @@ export default {
 }
 .inputBtn {
   flex-grow: 1;
-  font-size: 15px;
+  font-size: 13px;
   text-transform: none;
 
 }
