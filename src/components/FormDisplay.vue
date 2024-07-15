@@ -1,16 +1,23 @@
 <template>
   <div class="formDispaly">
-    <div class="countainer"></div>
+    <div class="parent">
+      <div> </div>
+      <FreeText />
+    </div>
   </div>
 </template>
 
 <script>
+import FreeText from './QuestionTypes/FreeText.vue'
 export default {
   name: "FormDisplay",
+  components: {
+    FreeText
+  }
 };
 </script>
 
-<style>
+<style scoped>
 .formDispaly {
   width: 50vw;
   height: 100%;
@@ -19,11 +26,14 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.countainer{
+.parent {
   width: 80%;
-  height: 60%;
+  height: 70%;
   background-color: white;
   border-radius: 8px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="countainer">
+  <div class="parent">
     <div class="question">
       <v-label>Question*</v-label>
       <v-text-field
@@ -121,11 +121,12 @@ export default {
 </script>
 
 <style scoped>
-.countainer {
+.parent {
   box-shadow : 2px 2px 20px rgba(0,0,0,0.3) ;
   padding: 15px;
+  margin-top: 15px;
   width: 80%;
-  height: 100%;
+  /* height: 97%; */
   background-color: white;
   border-radius: 8px;
 }

@@ -27,19 +27,16 @@ export default {
 .formQuestion {
   width: 55vw;
   height: 100%;
-  background-color: rgb(92, 78, 78);
 }
 
 .scroll-div {
-  background-color: azure;
   height: 100%;
   width: 100%;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   gap: 8px;
   flex-direction: column;
-  padding-top: 10px;
+  padding: 3rem 0 2rem 0;
   overflow: auto;
 }
 </style>

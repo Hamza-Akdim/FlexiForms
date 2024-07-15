@@ -1,8 +1,8 @@
 import { createApp } from "vue";
 
 // Vuetify
-// import "vuetify/styles";
-// import "@mdi/font/css/materialdesignicons.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 import "./plugins/vuetify";
 import "./main.css"
 import { createVuetify } from "vuetify";

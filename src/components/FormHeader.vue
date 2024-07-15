@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="nav-bar">
     <v-toolbar density="compact" style="height: 100%;">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -24,10 +24,10 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
+.nav-bar {
   width:100vw;
-  height: 4vw;
-  /* position: fixed; */
+  /* height: 4vw; */
+  position: fixed;
 }
 
 .button {

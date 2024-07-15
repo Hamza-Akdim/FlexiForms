@@ -1,5 +1,5 @@
 <template>
-  <div class="countainer">
+  <div class="parent">
     <button>
       <div class="icon-div">
         <v-icon icon="mdi-plus" class="icon" />
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-.countainer {
+.parent {
   height: 13%;
   padding: 0;
   width: 80%;

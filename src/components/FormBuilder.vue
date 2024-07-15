@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="parent">
         <FormHeader />
-        <div class="container1">
+        <div class="parent1">
             <FormQuestions />
             <FormDisplay />
         </div>
@@ -24,13 +24,13 @@ export default {
 </script>
 
 <style scoped>
-    .container{
+    .parent{
         height: 100vh;
         width: 100vw;
         display: flex;
         flex-direction: column;
     }
-    .container1{
+    .parent1{
         display: flex;
         height: 96vh;
         justify-content: space-between;
