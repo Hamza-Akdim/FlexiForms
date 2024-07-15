@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <v-toolbar density="compact" style="height: 100%;">
+    <v-toolbar density="compact">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <v-toolbar-title style="color: black">FlexiForms</v-toolbar-title>

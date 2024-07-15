@@ -21,7 +21,6 @@ export default {
 .formDispaly {
   width: 50vw;
   height: 100%;
-  background-color: rgb(129, 110, 110);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +28,7 @@ export default {
 .parent {
   width: 80%;
   height: 70%;
-  background-color: white;
+  background-color:  	rgb(220,220,220);
   border-radius: 8px;
   display: flex;
   justify-content: center;
