@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 .card-parent {
-  height: 70%;
+  height: 80%;
   width: 80%;
   padding: 15px;
 }
@@ -46,15 +46,15 @@ export default {
 }
 
 .title {
-  display: flex;
-  justify-content: flex-start;
+
 }
 
 .input-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 10px 5px 10px;
+  margin-top: 20px ;
+  padding: 15px;
 }
 
 .next-btn {

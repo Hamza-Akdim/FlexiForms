@@ -32,7 +32,7 @@ export default {
     }
     .parent1{
         display: flex;
-        height: 96vh;
+        height: 92%;
         justify-content: space-between;
         align-items: center;
     }

@@ -123,10 +123,8 @@ export default {
 <style scoped>
 .parent {
   box-shadow : 2px 2px 20px rgba(0,0,0,0.3) ;
-  padding: 15px;
-  margin-top: 15px;
+  padding: 10px;
   width: 80%;
-  /* height: 97%; */
   background-color: white;
   border-radius: 8px;
 }
@@ -148,7 +146,7 @@ export default {
   flex-grow: 1;
   font-size: 13px;
   text-transform: none;
-
+  
 }
 .iconBtn {
   margin-left: 4px;

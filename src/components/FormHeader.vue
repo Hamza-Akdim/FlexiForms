@@ -26,8 +26,9 @@ export default {
 <style scoped>
 .nav-bar {
   width:100vw;
-  /* height: 4vw; */
-  position: fixed;
+  background-color: aqua;
+  height: 8%;
+  /* position: fixed; */
 }
 
 .button {
