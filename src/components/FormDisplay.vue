@@ -10,6 +10,7 @@
           fill="currentColor"
           class="bi bi-arrows-fullscreen"
           viewBox="0 0 16 16"
+          style="cursor: pointer;"
         >
           <path
             fill-rule="evenodd"
