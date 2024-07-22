@@ -60,7 +60,7 @@
           <v-btn
             v-bind:variant="buttonVariants[0]"
             class="inputBtn"
-            @click="toggleVariant(0)"
+            @click="toggleVariant(0); freeTextData.inputType= 'text'; freeTextData.placeholder='Type your answer here?'"
           >
             Text
             <v-icon icon="mdi-message-text" class="iconBtn"></v-icon>
@@ -69,7 +69,7 @@
           <v-btn
             v-bind:variant="buttonVariants[1]"
             class="inputBtn"
-            @click="toggleVariant(1)"
+            @click="toggleVariant(1); freeTextData.inputType= 'email'; freeTextData.placeholder = 'example@email.com'"
             >Email
             <v-icon icon="mdi-email" class="iconBtn"></v-icon>
           </v-btn>
@@ -77,7 +77,7 @@
           <v-btn
             v-bind:variant="buttonVariants[2]"
             class="inputBtn"
-            @click="toggleVariant(2)"
+            @click="toggleVariant(2); freeTextData.inputType= 'url'; freeTextData.placeholder= 'http://...'"
           >
             URL
             <v-icon class="iconBtn" icon="mdi-link"></v-icon>
@@ -86,7 +86,7 @@
           <v-btn
             v-bind:variant="buttonVariants[3]"
             class="inputBtn"
-            @click="toggleVariant(3)"
+            @click="toggleVariant(3); freeTextData.inputType= 'number'; freeTextData.placeholder='36'"
           >
             Number<span class="numberIcon iconBtn">#</span>
           </v-btn>
@@ -94,7 +94,7 @@
           <v-btn
             v-bind:variant="buttonVariants[4]"
             class="inputBtn"
-            @click="toggleVariant(4)"
+            @click="toggleVariant(4); freeTextData.inputType= 'phone'; freeTextData.placeholder= '+1 123 456 789'"
           >
             Phone
             <v-icon icon="mdi-phone" class="iconBtn"></v-icon>
@@ -178,7 +178,8 @@ export default {
 }
 
 .custom-text-field {
-  padding: 4px;
+  padding: 4px 10px;
+  font-size: 14px;
   border: 1px solid rgb(183, 181, 181);
   border-radius: 5px;
   display: block;
@@ -205,10 +206,13 @@ export default {
   border-radius: 5px;
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
 }
+
 .inputBtn {
   flex-grow: 1;
-  font-size: 13px;
+  font-size: 12.5px;
   text-transform: none;
 }
 .iconBtn {

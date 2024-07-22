@@ -5,19 +5,20 @@
     </div>
 
     <div class="title">
-      <v-card-title>What would you like to know?</v-card-title>
+      <v-card-title>{{ freeTextData.question }}</v-card-title>
     </div>
 
     <div class="subtitle">
-      <v-card-subtitle>This is an example servey</v-card-subtitle>
+      <v-card-subtitle>{{ freeTextData.description }}</v-card-subtitle>
     </div>
 
     <div class="input-text">
-      <v-text-field
+      <InputField />
+      <!-- <v-text-field
         variant="outlined"
-        placeholder="Type your answer here?"
+        :placeholder="freeTextData.placeholder"
         required
-      ></v-text-field>
+      ></v-text-field> -->
     </div>
 
     <div class="next-btn">
@@ -29,8 +30,16 @@
 </template>
 
 <script>
+import InputField from "../Diverse/InputField.vue"
+
 export default {
   name: "FreeText",
+
+  components: {
+    InputField
+  },
+
+  inject: ["freeTextData"],
 };
 </script>
 
@@ -46,14 +55,13 @@ export default {
 }
 
 .title {
-
 }
 
 .input-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px ;
+  margin-top: 20px;
   padding: 15px;
 }
 
