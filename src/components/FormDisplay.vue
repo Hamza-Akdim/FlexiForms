@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import FreeText from "./QuestionTypes/FreeText.vue";
+import FreeText from "./Display/FreeText.vue";
 export default {
   name: "FormDisplay",
   components: {

@@ -1,38 +1,34 @@
 <template>
   <div class="parent">
     <div class="question">
-      <v-label>Question*</v-label>
-      <v-text-field
+      <label>Question*</label>
+      <input
+        type="text"
+        class="custom-text-field"
         v-model="formData.question"
-        class="custom-text-field"
-        variant="outlined"
-        placeholder="What would you like to know?"
-        required
-      ></v-text-field>
+      />
     </div>
 
     <div class="question">
-      <v-label>Description</v-label>
-      <v-text-field
+      <label>Description</label>
+      <input
+        type="text"
+        class="custom-text-field"
         v-model="formData.description"
-        class="custom-text-field"
-        variant="outlined"
-        placeholder="This an example servey"
-      ></v-text-field>
+      />
     </div>
 
     <div class="question">
-      <v-label>Placeholder</v-label>
-      <v-text-field
+      <label>Placeholder</label>
+      <input
+        type="text"
+        class="custom-text-field"
         v-model="formData.placeholder"
-        class="custom-text-field"
-        variant="outlined"
-        placeholder="Type your answer here..."
-      ></v-text-field>
+      />
     </div>
 
     <div class="question">
-      <v-label>Input Type</v-label>
+      <label>Input Type</label>
       <div class="setButton">
         <v-btn
           v-bind:variant="buttonVariants[0]"
@@ -78,18 +74,6 @@
         </v-btn>
       </div>
     </div>
-
-    <div class="question">
-      <v-label>Question*</v-label>
-      <v-text-field
-        v-model="formData.question"
-        class="custom-text-field"
-        variant="outlined"
-        placeholder="What would you like to know?"
-        required
-      ></v-text-field>
-    </div>
-  
   </div>
 </template>
 
@@ -100,9 +84,9 @@ export default {
     return {
       buttonVariants: ["tonal", "", "", "", ""],
       formData: {
-        question: "",
-        description: "",
-        inputType: "",
+        question: "What would you like to know?",
+        description: "This is an example servey",
+        placeholder: "Type your answer here?",
       },
     };
   },
@@ -122,31 +106,51 @@ export default {
 
 <style scoped>
 .parent {
-  box-shadow : 2px 2px 20px rgba(0,0,0,0.3) ;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
   padding: 10px;
   width: 80%;
   background-color: white;
   border-radius: 8px;
+  padding-bottom: 20px;
 }
 
 .question {
+  padding: 0px 10px 20px 0px;
 }
 
 .custom-text-field {
   padding: 4px;
+  border: 1px solid rgb(183, 181, 181);
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.custom-text-field:hover {
+  border: 1px solid black;
+}
+
+.custom-text-field:focus {
+  border: 2px solid black;
+}
+
+.custom-text-field:focus-visible {
+  outline: none;
 }
 
 .setButton {
   padding: 4px;
   border: 1px solid rgb(183, 181, 181);
   border-radius: 5px;
+  margin-top: 10px;
   display: flex;
 }
 .inputBtn {
   flex-grow: 1;
   font-size: 13px;
   text-transform: none;
-  
 }
 .iconBtn {
   margin-left: 4px;

@@ -1,8 +1,8 @@
 <template>
   <div class="formQuestion">
     <div class="scroll-div">
-      <QuestionsComponent />
-      <AddQuestion />
+      <FreeText />
+      <SingleSelect />
       <AddQuestion />
       <AddQuestion />
       <AddQuestion />
@@ -13,13 +13,17 @@
 
 <script>
 import AddQuestion from "./Questions/AddQuestion.vue";
-import QuestionsComponent from "./Questions/QuestionsComponent.vue";
+import FreeText from "./Questions/FreeText.vue";
+import SingleSelect from "./Questions/SingleSelect.vue";
+
 
 export default {
   name: "FormQuestions",
   components: {
-    QuestionsComponent,
+    FreeText,
+    SingleSelect,
     AddQuestion,
+
   },
 };
 </script>

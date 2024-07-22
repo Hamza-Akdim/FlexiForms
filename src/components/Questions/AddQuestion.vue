@@ -1,6 +1,6 @@
 <template>
   <div class="parent">
-    <div class="btn-div">
+    <div>
       <button @click="displayCard()">
         <div class="icon-div" :class="{ adjustReduisBorder: isDisplay }">
           <v-icon icon="mdi-plus" class="icon" />
