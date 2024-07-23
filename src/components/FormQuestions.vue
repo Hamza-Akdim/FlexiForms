@@ -1,12 +1,11 @@
 <template>
   <div class="formQuestion">
     <div class="scroll-div">
-      <FreeText />
-      <SingleSelect />
-      <AddQuestion />
-      <AddQuestion />
-      <AddQuestion />
-
+        <FreeText />
+        <SingleSelect />
+        <AddQuestion />
+        <AddQuestion />
+        <AddQuestion />        
     </div>
   </div>
 </template>

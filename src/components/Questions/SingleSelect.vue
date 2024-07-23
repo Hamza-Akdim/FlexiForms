@@ -18,7 +18,7 @@
           </svg>
         </div>
         <div class="text-btn">
-          <div style="font-size: 18px">What do you do?</div>
+          <h5>{{ singleSelectData.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Single Select
           </div>
@@ -32,7 +32,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="formData.question"
+          v-model="singleSelectData.question"
         />
       </div>
 
@@ -41,28 +41,127 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="formData.description"
+          v-model="singleSelectData.description"
         />
       </div>
 
       <div class="question">
         <label>Options*</label>
         <div>
-          <input
-            type="text"
-            class="custom-text-field"
-            v-model="formData.question"
-          />
-          <input
-            type="text"
-            class="custom-text-field"
-            v-model="formData.question"
-          />
-          <input
-            type="text"
-            class="custom-text-field"
-            v-model="formData.question"
-          />
+          <div class="inputOption">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-grip-vertical"
+              viewBox="0 0 16 16"
+              color="grey"
+              style="cursor: pointer;"
+            >
+              <path
+                d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+              />
+            </svg>
+
+            <input
+              type="text"
+              class="custom-text-field-option"
+              v-model="singleSelectData.options[0]"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+              color="grey"
+              style="cursor: pointer;"
+
+            >
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+              />
+              <path
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+              />
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+              color="grey"
+              style="cursor: pointer;"
+
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+              />
+            </svg>
+          </div>
+
+          <div class="inputOption">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-grip-vertical"
+              viewBox="0 0 16 16"
+              color="grey"
+              style="cursor: pointer;"
+
+            >
+              <path
+                d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
+              />
+            </svg>
+
+            <input
+              type="text"
+              class="custom-text-field-option"
+              v-model="singleSelectData.options[1]"
+            />
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="currentColor"
+              class="bi bi-trash"
+              viewBox="0 0 16 16"
+              color="grey"
+              style="cursor: pointer"
+            >
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+              />
+              <path
+                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+              />
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+              color="grey"
+              style="cursor: pointer;"
+
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -71,32 +170,19 @@
 
 <script>
 export default {
-  name: "SingleSelect",
+  name: "single-selection-question",
   data() {
     return {
-      buttonVariants: ["tonal", "", "", "", ""],
-      formData: {
-        question: "What do you do?",
-        description: "Can't do both",
-      },
       isHidden: false,
     };
   },
   methods: {
-    toggleVariant(index) {
-      this.buttonVariants.forEach((variant, i) => {
-        if (i !== index) {
-          this.buttonVariants[i] = "";
-        } else {
-          this.buttonVariants[i] = "tonal";
-        }
-      });
-    },
-
     displayCard() {
       this.isHidden = !this.isHidden;
     },
   },
+
+  inject: ["singleSelectData"]
 };
 </script>
 
@@ -143,7 +229,8 @@ export default {
 }
 
 .custom-text-field {
-  padding: 4px;
+  padding: 4px 10px;
+  font-size: 13px;
   border: 1px solid rgb(183, 181, 181);
   border-radius: 5px;
   display: block;
@@ -164,24 +251,40 @@ export default {
   outline: none;
 }
 
-.setButton {
-  padding: 4px;
+/* options input */
+.inputOption {
+  padding: 5px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.custom-text-field-option {
+  padding: 4px 10px;
+  margin-right: 5px;
+  font-size: 14px;
   border: 1px solid rgb(183, 181, 181);
   border-radius: 5px;
-  margin-top: 10px;
-  display: flex;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
 }
-.inputBtn {
-  flex-grow: 1;
-  font-size: 13px;
-  text-transform: none;
+
+.custom-text-field-option:hover {
+  border: 1px solid black;
 }
-.iconBtn {
-  margin-left: 4px;
+
+.custom-text-field-option:focus {
+  border: 2px solid black;
 }
-.numberIcon {
-  font-size: 18px;
-  font-weight: 600;
+
+.custom-text-field-option:focus-visible {
+  outline: none;
+}
+
+.icon-option {
 }
 
 .showCard {

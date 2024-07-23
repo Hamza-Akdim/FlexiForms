@@ -18,7 +18,7 @@
           </svg>
         </div>
         <div class="text-btn">
-          <div style="font-size: 18px">What would like to know?</div>
+          <h5>{{ freeTextData.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Free Text
           </div>
@@ -179,7 +179,7 @@ export default {
 
 .custom-text-field {
   padding: 4px 10px;
-  font-size: 14px;
+  font-size: 13px;
   border: 1px solid rgb(183, 181, 181);
   border-radius: 5px;
   display: block;

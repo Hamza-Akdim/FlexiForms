@@ -24,11 +24,17 @@ export default {
 
   data() {
     return {
-        freeTextData: {
+      freeTextData: {
         question: "What would you like to know?",
         description: "This is an example servey",
         placeholder: "Type your answer here?",
         inputType: "text",
+      },
+
+      singleSelectData: {
+        question: "What do you do?",
+        description: "Can't do both",
+        options: ["Eat the cake", "Have the cake"]
       },
     };
   },
@@ -36,6 +42,7 @@ export default {
   provide() {
     return {
       freeTextData: this.freeTextData,
+      singleSelectData: this.singleSelectData,
     };
   },
 };
