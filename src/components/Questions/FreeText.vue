@@ -139,7 +139,7 @@ export default {
 .parent {
   padding: 0;
   width: 80%;
-  margin-top: 10px;
+  margin-top: 5rem;
   border-radius: 8px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
 }
