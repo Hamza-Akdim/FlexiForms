@@ -189,7 +189,7 @@ export default {
 <style scoped>
 .parent {
   padding: 0;
-  width: 80%;
+  width: 85%;
   margin-top: 10px;
   border-radius: 8px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);

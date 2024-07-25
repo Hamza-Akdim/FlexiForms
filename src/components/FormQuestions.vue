@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import NavBar from "./Diverse/NavBar.vue"
+import NavBar from "./Diverse/NavBar.vue";
 import AddQuestion from "./Questions/AddQuestion.vue";
 import FreeText from "./Questions/FreeText.vue";
 import SingleSelect from "./Questions/SingleSelect.vue";
@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .formQuestion {
-  width: 55vw;
+  width: 50vw;
   height: 100%;
 }
 
@@ -44,6 +44,6 @@ export default {
   overflow: auto;
   position: relative;
   z-index: 0;
+  padding-bottom: 15px;
 }
-
 </style>

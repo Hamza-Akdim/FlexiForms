@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 .nav-bar {
-  width: 52.3%;
+  width: 50%;
   left: 0px;
   height: 10%;
   position: fixed;
@@ -73,10 +73,9 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: 2px solid  grey;
+  border: 2px solid grey;
 }
 
-.div-icon{
-    
+.div-icon {
 }
 </style>
