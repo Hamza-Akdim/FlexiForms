@@ -24,25 +24,35 @@ export default {
 
   data() {
     return {
-      freeTextData: {
-        question: "What would you like to know?",
-        description: "This is an example servey",
-        placeholder: "Type your answer here?",
-        inputType: "text",
+      freeText: {
+        data: {
+          question: "What would you like to know?",
+          description: "This is an example servey",
+          placeholder: "Type your answer here?",
+          inputType: "text",
+        },
       },
 
-      singleSelectData: {
-        question: "What do you do?",
-        description: "Can't do both",
-        options: ["Eat the cake", "Have the cake"]
+      signleSelect: {
+        data: {
+          question: "What do you do?",
+          description: "Can't do both",
+          options: ["Option 1", "Option 2"],
+        },
       },
     };
   },
 
+  methods: {
+    addOption(index, label) {
+      this.singleSelectData.options(index, 0, label);
+    },
+  },
+
   provide() {
     return {
-      freeTextData: this.freeTextData,
-      singleSelectData: this.singleSelectData,
+      freeText: this.freeText,
+      signleSelect: this.signleSelect,
     };
   },
 };

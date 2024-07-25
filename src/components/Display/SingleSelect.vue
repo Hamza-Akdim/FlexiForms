@@ -5,15 +5,15 @@
     </div>
 
     <div class="title">
-      <v-card-title>{{ freeText.data.question }}</v-card-title>
+      <v-card-title>{{ singleSelectData.question }}</v-card-title>
     </div>
 
     <div class="subtitle">
-      <v-card-subtitle>{{ freeText.data.description }}</v-card-subtitle>
+      <v-card-subtitle>{{ singleSelectData.description }}</v-card-subtitle>
     </div>
 
     <div class="input-text">
-      <InputField />
+      <SingleSelectInput />
     </div>
 
     <div class="next-btn">
@@ -25,16 +25,16 @@
 </template>
 
 <script>
-import InputField from "../Diverse/InputField.vue"
+import SingleSelectInput from "../Diverse/SingleSelectInput.vue";
 
 export default {
-  name: "FreeText",
+  name: "single-select-display",
 
   components: {
-    InputField
+    SingleSelectInput,
   },
 
-  inject: ["freeText"],
+  inject: ["singleSelectData"],
 };
 </script>
 
@@ -43,21 +43,18 @@ export default {
   height: 80%;
   width: 80%;
   padding: 15px;
-  display: none;
 }
 .close-btn {
   display: flex;
   justify-content: flex-end;
 }
 
-.title {
-}
-
 .input-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 50%;
+  margin-top: 10px;
   padding: 15px;
 }
 

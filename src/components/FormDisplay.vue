@@ -22,6 +22,7 @@
 
       <div class="display-form">
         <FreeText />
+        <SingleSelect />
       </div>
     </div>
   </div>
@@ -29,10 +30,12 @@
 
 <script>
 import FreeText from "./Display/FreeText.vue";
+import SingleSelect from "./Display/SingleSelect.vue";
 export default {
   name: "FormDisplay",
   components: {
     FreeText,
+    SingleSelect
   },
 };
 </script>

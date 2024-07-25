@@ -18,7 +18,7 @@
           </svg>
         </div>
         <div class="text-btn">
-          <h5>{{ singleSelectData.question }}</h5>
+          <h5>{{ singleSelect.data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Single Select
           </div>
@@ -32,7 +32,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="singleSelectData.question"
+          v-model="singleSelect.data.question"
         />
       </div>
 
@@ -41,7 +41,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="singleSelectData.description"
+          v-model="singleSelect.data.description"
         />
       </div>
 
@@ -57,7 +57,7 @@
               class="bi bi-grip-vertical"
               viewBox="0 0 16 16"
               color="grey"
-              style="cursor: pointer;"
+              style="cursor: move;"
             >
               <path
                 d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"
@@ -67,7 +67,7 @@
             <input
               type="text"
               class="custom-text-field-option"
-              v-model="singleSelectData.options[0]"
+              v-model="singleSelect.data.options[0]"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@
               class="bi bi-grip-vertical"
               viewBox="0 0 16 16"
               color="grey"
-              style="cursor: pointer;"
+              style="cursor: move;"
 
             >
               <path
@@ -125,7 +125,7 @@
             <input
               type="text"
               class="custom-text-field-option"
-              v-model="singleSelectData.options[1]"
+              v-model="singleSelect.data.options[1]"
             />
 
             <svg
@@ -182,7 +182,7 @@ export default {
     },
   },
 
-  inject: ["singleSelectData"]
+  inject: ["singleSelect"]
 };
 </script>
 

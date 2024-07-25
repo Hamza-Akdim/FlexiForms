@@ -18,7 +18,7 @@
           </svg>
         </div>
         <div class="text-btn">
-          <h5>{{ freeTextData.question }}</h5>
+          <h5>{{ freeText.data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Free Text
           </div>
@@ -32,7 +32,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="freeTextData.question"
+          v-model="freeText.data.question"
         />
       </div>
 
@@ -41,7 +41,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="freeTextData.description"
+          v-model="freeText.data.description"
         />
       </div>
 
@@ -50,7 +50,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="freeTextData.placeholder"
+          v-model="freeText.data.placeholder"
         />
       </div>
 
@@ -60,7 +60,7 @@
           <v-btn
             v-bind:variant="buttonVariants[0]"
             class="inputBtn"
-            @click="toggleVariant(0); freeTextData.inputType= 'text'; freeTextData.placeholder='Type your answer here?'"
+            @click="toggleVariant(0); freeText.data.inputType= 'text'; freeText.data.placeholder='Type your answer here?'"
           >
             Text
             <v-icon icon="mdi-message-text" class="iconBtn"></v-icon>
@@ -69,7 +69,7 @@
           <v-btn
             v-bind:variant="buttonVariants[1]"
             class="inputBtn"
-            @click="toggleVariant(1); freeTextData.inputType= 'email'; freeTextData.placeholder = 'example@email.com'"
+            @click="toggleVariant(1); freeText.data.inputType= 'email'; freeText.data.placeholder = 'example@email.com'"
             >Email
             <v-icon icon="mdi-email" class="iconBtn"></v-icon>
           </v-btn>
@@ -77,7 +77,7 @@
           <v-btn
             v-bind:variant="buttonVariants[2]"
             class="inputBtn"
-            @click="toggleVariant(2); freeTextData.inputType= 'url'; freeTextData.placeholder= 'http://...'"
+            @click="toggleVariant(2); freeText.data.inputType= 'url'; freeText.data.placeholder= 'http://...'"
           >
             URL
             <v-icon class="iconBtn" icon="mdi-link"></v-icon>
@@ -86,7 +86,7 @@
           <v-btn
             v-bind:variant="buttonVariants[3]"
             class="inputBtn"
-            @click="toggleVariant(3); freeTextData.inputType= 'number'; freeTextData.placeholder='36'"
+            @click="toggleVariant(3); freeText.data.inputType= 'number'; freeText.data.placeholder='36'"
           >
             Number<span class="numberIcon iconBtn">#</span>
           </v-btn>
@@ -94,7 +94,7 @@
           <v-btn
             v-bind:variant="buttonVariants[4]"
             class="inputBtn"
-            @click="toggleVariant(4); freeTextData.inputType= 'phone'; freeTextData.placeholder= '+1 123 456 789'"
+            @click="toggleVariant(4); freeText.data.inputType= 'phone'; freeText.data.placeholder= '+1 123 456 789'"
           >
             Phone
             <v-icon icon="mdi-phone" class="iconBtn"></v-icon>
@@ -115,7 +115,7 @@ export default {
     };
   },
 
-  inject: ["freeTextData"],
+  inject: ["freeText"],
 
   methods: {
     toggleVariant(index) {

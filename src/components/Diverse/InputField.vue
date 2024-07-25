@@ -1,8 +1,8 @@
 <template>
   <v-text-field
-    :type="freeTextData.inputType"
+    :type="freeText.data.inputType"
     variant="outlined"
-    :placeholder="freeTextData.placeholder"
+    :placeholder="freeText.data.placeholder"
   ></v-text-field>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   name: "input-field-free-text",
 
-  inject: ["freeTextData"],
+  inject: ["freeText"],
 };
 </script>
 
