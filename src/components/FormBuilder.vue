@@ -33,30 +33,35 @@ export default {
         },
       },
 
-      signleSelect: {
+      singleSelect: {
         data: {
           question: "What do you do?",
           description: "Can't do both",
-          options: ["Option 1", "Option 2"],
+          options: ["Option 1", "Option 2","Option 3"],
         },
 
         method:{
           addOption: this.addOption,
+          updateOption: this.updateOption,
         }
       },
     };
   },
 
   methods: {
-    addOption(index, label) {
-      this.singleSelect.data.options(index, 0, label);
+    addOption(index,label) {
+      this.singleSelect.data.options.splice(index, 0, label);
     },
+
+    updateOption(index,label){
+      this.singleSelect.data.options[index]=label;
+    }
   },
 
   provide() {
     return {
       freeText: this.freeText,
-      singleSelect: this.signleSelect,
+      singleSelect: this.singleSelect,
     };
   },
 };

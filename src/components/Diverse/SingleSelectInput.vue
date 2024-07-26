@@ -1,18 +1,31 @@
 <template>
   <div class="parent-div">
-    <div class="div-input">
+    <div
+      class="div-input"
+      v-for="(option, index) in singleSelect.data.options"
+      :key="index"
+    >
       <input
+        v-if="index == 0"
         type="radio"
         name="oneSelect"
-        :id="singleSelect.data.options[0]"
+        :id="index"
         checked
       />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
+
+      <input
+        v-else
+        type="radio"
+        name="oneSelect"
+        :id="index"
+      />
+
+      <label :for="index">
+        {{ option }}
       </label>
     </div>
 
-    <div class="div-input">
+    <!-- <div class="div-input">
       <input type="radio" name="oneSelect" :id="singleSelect.data.options[1]" />
       <label :for="singleSelect.data.options[1]">
         {{ singleSelect.data.options[1] }}
@@ -31,35 +44,7 @@
       <label :for="singleSelect.data.options[0]">
         {{ singleSelect.data.options[0] }}
       </label>
-    </div>
-
-    <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[0]" />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
-      </label>
-    </div>
-
-    <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[0]" />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
-      </label>
-    </div>
-
-    <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[0]" />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
-      </label>
-    </div>
-
-    <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[0]" />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
-      </label>
-    </div>
+    </div> -->
   </div>
 </template>
 
