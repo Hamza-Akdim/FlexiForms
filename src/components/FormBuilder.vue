@@ -39,20 +39,24 @@ export default {
           description: "Can't do both",
           options: ["Option 1", "Option 2"],
         },
+
+        method:{
+          addOption: this.addOption,
+        }
       },
     };
   },
 
   methods: {
     addOption(index, label) {
-      this.singleSelectData.options(index, 0, label);
+      this.singleSelect.data.options(index, 0, label);
     },
   },
 
   provide() {
     return {
       freeText: this.freeText,
-      signleSelect: this.signleSelect,
+      singleSelect: this.signleSelect,
     };
   },
 };
