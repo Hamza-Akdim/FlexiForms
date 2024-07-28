@@ -2,7 +2,7 @@
   <div class="formDispaly">
     <div class="parent">
       <div class="header-parent">
-        <div style="font-size: 20px ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">in your web app</div>
+        <div style="font-size: 20px ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">in your web app</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -51,7 +51,8 @@ export default {
 .parent {
   width: 80%;
   height: 80%;
-  background-color: rgb(238,238,238);
+  background-color:  	rgb(240,248,255);
+  box-shadow : 2px 2px 20px rgba(0,51,102,0.2);
   border-radius: 8px;
   padding: 5px;
 }

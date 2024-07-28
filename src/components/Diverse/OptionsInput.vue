@@ -33,6 +33,7 @@
       viewBox="0 0 16 16"
       color="grey"
       style="cursor: pointer"
+      @click="singleSelect.method.removeOption(index)"
     >
       <path
         d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
@@ -51,7 +52,7 @@
       viewBox="0 0 16 16"
       color="grey"
       style="cursor: pointer"
-      @click="singleSelect.method.addOption(index+1,`option ${index+2}`)"
+      @click="singleSelect.method.addOption(index + 1, `option ${index + 2}`)"
     >
       <path
         d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
@@ -64,6 +65,16 @@
 export default {
   name: "options-input-form-question",
   inject: ["singleSelect"],
+  mounted() {
+    this.initializeOptions();
+  },
+  methods: {
+    initializeOptions() {
+      this.singleSelect.data.options = this.singleSelect.data.options.map(
+        (option, index) => `Option ${index + 1}`
+      );
+    },
+  },
 };
 </script>
 
@@ -100,7 +111,7 @@ export default {
   outline: none;
 }
 
-svg:hover{
-    color: black  ;
+svg:hover {
+  color: black;
 }
 </style>

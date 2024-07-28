@@ -37,25 +37,30 @@ export default {
         data: {
           question: "What do you do?",
           description: "Can't do both",
-          options: ["Option 1", "Option 2","Option 3"],
+          options: ["", ""],
         },
 
-        method:{
+        method: {
           addOption: this.addOption,
           updateOption: this.updateOption,
-        }
+          removeOption: this.removeOption
+        },
       },
     };
   },
 
   methods: {
-    addOption(index,label) {
+    addOption(index, label) {
       this.singleSelect.data.options.splice(index, 0, label);
     },
 
-    updateOption(index,label){
-      this.singleSelect.data.options[index]=label;
-    }
+    updateOption(index, label) {
+      this.singleSelect.data.options[index] = label;
+    },
+
+    removeOption(index) {
+      this.singleSelect.data.options.splice(index, 1);
+    },
   },
 
   provide() {
