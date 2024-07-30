@@ -2,7 +2,7 @@
   <div class="formDispaly">
     <div class="parent">
       <div class="header-parent">
-        <div style="font-size: 20px ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">in your web app</div>
+        <div style="font-size: 20px ;">in your web app</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

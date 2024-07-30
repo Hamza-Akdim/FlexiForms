@@ -87,7 +87,8 @@ export default {
 }
 
 .icon-div {
-  background-color: rgb(119, 136, 153);
+  /* background-color: rgb(119, 136, 153); */
+  background-color: rgb(0,51,102);
   width: 8%;
   display: flex;
   justify-content: center;
