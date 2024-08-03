@@ -43,7 +43,7 @@ export default {
   height: 80%;
   width: 80%;
   padding: 15px;
-  display: none;
+  /* display: none; */
 }
 .close-btn {
   display: flex;

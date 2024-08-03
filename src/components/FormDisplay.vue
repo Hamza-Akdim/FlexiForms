@@ -51,7 +51,7 @@ export default {
 .parent {
   width: 80%;
   height: 80%;
-  background-color:  	rgb(240,248,255);
+  background-color:	rgb(240,248,255);
   box-shadow : 2px 2px 20px rgba(0,51,102,0.2);
   border-radius: 8px;
   padding: 5px;

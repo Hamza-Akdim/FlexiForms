@@ -77,6 +77,6 @@ label {
 }
 
 input {
-  accent-color: rgb(79, 79, 79);
+  accent-color: black;
 }
 </style>

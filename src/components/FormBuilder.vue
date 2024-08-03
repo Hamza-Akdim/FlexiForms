@@ -40,21 +40,33 @@ export default {
           options: [],
         },
 
-        method: {
+        method: {},
+      },
 
+      multiSelect: {
+        data: {
+          question: "What motivates you in your job?",
+          description: "You can select more that one option",
+          options: [],
+        },
+      },
+
+      variablForm: {
+        data: {
+          whatIsAdded: "",
         },
       },
     };
   },
 
-  methods: {
-
-  },
+  methods: {},
 
   provide() {
     return {
       freeText: this.freeText,
       singleSelect: this.singleSelect,
+      multiSelect: this.multiSelect,
+      variablForm: this.variablForm,
     };
   },
 };

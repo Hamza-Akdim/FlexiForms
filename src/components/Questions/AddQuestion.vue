@@ -13,7 +13,6 @@
         </div>
       </button>
     </div>
-
     <div class="opend-card" :class="{ showCard: isDisplay }">
       <div class="servey-type">
         <button class="inputBtn">
@@ -141,7 +140,7 @@ button {
 }
 
 .icon-div {
-  background-color: rgb(105, 190, 189);
+  background-color: #508C9B;
   width: 8%;
   display: flex;
   justify-content: center;
@@ -185,7 +184,7 @@ button {
 
 .icon-opend-card {
   margin: 2px 5px 0 0;
-  color: rgb(105, 190, 189);
+  color: #508C9B;
 }
 
 .showCard {

@@ -1,7 +1,7 @@
 <template>
   <div
     class="inputOption"
-    v-for="(option, index) in singleSelect.data.options"
+    v-for="(option, index) in multiSelect.data.options"
     :key="index"
   >
     <svg
@@ -22,7 +22,7 @@
     <input
       type="text"
       class="custom-text-field-option"
-      v-model="singleSelect.data.options[index]"
+      v-model="multiSelect.data.options[index]"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@
 <script>
 export default {
   name: "one-select-options-input-form-question",
-  inject: ["singleSelect"],
+  inject: ["multiSelect"],
   mounted() {
     for (let i = 0; i < 2; i++) {
       this.addOption(i);
@@ -72,25 +72,25 @@ export default {
   },
   methods: {
     addOption(index) {
-      this.singleSelect.data.options.splice(index, 0, `Option ${index + 1}`);
+      this.multiSelect.data.options.splice(index, 0, `Option ${index + 1}`);
       this.updateDefaultData(index, 1);
     },
 
     removeOption(index) {
-      this.singleSelect.data.options.splice(index, 1);
+      this.multiSelect.data.options.splice(index, 1);
       this.updateDefaultData(index, -1);
     },
 
     updateDefaultData(index, variable) {
-      this.singleSelect.data.options.forEach((option, i) => {
+      this.multiSelect.data.options.forEach((option, i) => {
         if (variable > 0) {
           if (i > index && option === `Option ${i}`) {
-            this.singleSelect.data.options[i] = `Option ${i + 1}`;
+            this.multiSelect.data.options[i] = `Option ${i + 1}`;
           }
         } else {
           console.log("index= "+index+" i= "+i)
           if (i >= index && option === `Option ${i + 2}`) {
-            this.singleSelect.data.options[i] = `Option ${i+1}`;
+            this.multiSelect.data.options[i] = `Option ${i+1}`;
           }
         }
       });
