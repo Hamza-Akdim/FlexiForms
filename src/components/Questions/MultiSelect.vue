@@ -3,7 +3,7 @@
     <div>
       <button @click="displayCard()" class="btn-number">
         <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <div class="circle-icon">3</div>
+          <div class="circle-icon">{{ surveyNumber}}</div>
         </div>
         <div class="text-btn">
           <h5>{{ multiSelect.data.question }}</h5>
@@ -56,13 +56,18 @@ export default {
       isHidden: false,
     };
   },
+
+  props:{
+    surveyNumber: Number
+  },
+
   methods: {
     displayCard() {
       this.isHidden = !this.isHidden;
     },
   },
 
-  inject: ["multiSelect"],
+  inject: ["multiSelect","survey"],
 };
 </script>
 

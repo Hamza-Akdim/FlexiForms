@@ -15,7 +15,7 @@
     </div>
     <div class="opend-card" :class="{ showCard: isDisplay }">
       <div class="servey-type">
-        <button class="inputBtn" @click="addNewServey('freeText')">
+        <button class="inputBtn" @click="addNewSurvey('freeText')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -33,7 +33,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn" @click="addNewServey('singleSelect')">
+        <button class="inputBtn" @click="addNewSurvey('singleSelect')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -51,7 +51,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn" @click="addNewServey('multiSelect')">
+        <button class="inputBtn" @click="addNewSurvey('multiSelect')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -70,7 +70,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn" @click="addNewServey('rating')">
+        <button class="inputBtn" @click="addNewSurvey('rating')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -88,7 +88,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn" @click="addNewServey('fileUpload')">
+        <button class="inputBtn" @click="addNewSurvey('fileUpload')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -121,14 +121,11 @@ export default {
       this.isDisplay = !this.isDisplay;
     },
 
-    addNewServey(survey) {
-      this.newSurvey.data.add = survey;
-      this.newSurvey.data.number++;
-
-      this.newSurvey.currentArray.push(this.newSurvey.data)
+    addNewSurvey(surveyType) {
+      this.survey.push({type: surveyType, number: this.survey.length +1 })
     },
   },
-  inject: ["newSurvey"],
+  inject: ["survey"],
 
 
 };

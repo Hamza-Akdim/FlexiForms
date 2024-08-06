@@ -1,7 +1,10 @@
 <template>
-  <FreeText v-if="newSurvey.data.add === 'freeText'" style="margin-top: 10px" />
-  <SingleSelect v-if="newSurvey.data.add === 'singleSelect'" />
-  <MultiSelect v-if="newSurvey.data.add === 'multiSelect'" />
+  <template v-for="(form) in survey" >
+    {{ console.log(survey) }}
+    <FreeText v-if="form.type === 'freeText'" :key="form.number" style="margin-top: 10px" :surveyNumber="form.number"/>
+    <SingleSelect v-if="form.type === 'singleSelect'" :key="form.number" :surveyNumber="form.number" />
+    <MultiSelect v-if="form.type === 'multiSelect'" :key="form.number" :surveyNumber="form.number" />
+  </template>
 </template>
 
 <script>
@@ -12,30 +15,15 @@ import SingleSelect from "./SingleSelect.vue";
 export default {
   name: "new-form",
 
-  mounted() {
-    this.newSurvey.data.add = "";
-  },
-
-  inject: ["newSurvey"],
+  inject: ["survey"],
   components: {
     FreeText,
     SingleSelect,
     MultiSelect,
   },
-
-  // watch: {
-  //   newSurvey: {
-  //     immediate: true,
-  //     deep: true,
-  //     handler: function (newValue, oldValue) {
-  //       if (newValue.data.update != oldValue.data.update) {
-  //         console.log("I AM HERE");
-  //         this.newSurvey.data.update = false;
-  //       }
-  //     },
-  //   },
-  // },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

@@ -2,8 +2,8 @@
   <div class="formQuestion">
     <div class="scroll-div">
       <NavBar />
-      <FreeText />
-      <SingleSelect />
+      <!-- <FreeText /> -->
+      <!-- <SingleSelect /> -->
       <NewForm />
       <AddQuestion />
     </div>
@@ -13,17 +13,17 @@
 <script>
 import NavBar from "./Diverse/NavBar.vue";
 import AddQuestion from "./Questions/AddQuestion.vue";
-import FreeText from "./Questions/FreeText.vue";
-import SingleSelect from "./Questions/SingleSelect.vue";
+// import FreeText from "./Questions/FreeText.vue";
+// import SingleSelect from "./Questions/SingleSelect.vue";
 import NewForm from "./Questions/NewForm.vue";
 
 export default {
   name: "FormQuestions",
-  inject: ["newSurvey"],
+  inject: ["survey"],
   components: {
     NavBar,
-    FreeText,
-    SingleSelect,
+    // FreeText,
+    // SingleSelect,
     AddQuestion,
     NewForm,
   },

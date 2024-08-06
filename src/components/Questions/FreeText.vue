@@ -3,19 +3,7 @@
     <div>
       <button @click="displayCard()" class="btn-number">
         <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-1-circle"
-            viewBox="0 0 16 16"
-            style="color: white"
-          >
-            <path
-              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"
-            />
-          </svg>
+          <div class="circle-icon">{{ surveyNumber}}</div>
         </div>
         <div class="text-btn">
           <h5>{{ freeText.data.question }}</h5>
@@ -135,7 +123,11 @@ export default {
     };
   },
 
-  inject: ["freeText", "newSurvey"],
+  props: {
+    surveyNumber: Number
+  },
+
+  inject: ["freeText", "survey"],
 
 
   methods: {
@@ -173,6 +165,19 @@ export default {
   justify-content: center;
   align-items: center;
   border-top-left-radius: 8px;
+}
+
+.circle-icon {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .btn-number {

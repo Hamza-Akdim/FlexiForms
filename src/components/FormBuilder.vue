@@ -51,14 +51,7 @@ export default {
         },
       },
 
-      newSurvey: {
-        data: {
-          add: "",
-          number: 0,
-        },
-
-        currentArray: []
-      },
+      survey: [{type: 'freeText', number: 1}, {type:'singleSelect', number: 2}],
     };
   },
 
@@ -69,7 +62,7 @@ export default {
       freeText: this.freeText,
       singleSelect: this.singleSelect,
       multiSelect: this.multiSelect,
-      newSurvey: this.newSurvey,
+      survey: this.survey,
     };
   },
 };
