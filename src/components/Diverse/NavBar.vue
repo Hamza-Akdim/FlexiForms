@@ -74,8 +74,7 @@ export default {
   justify-content: space-evenly;
   align-items: center;
   border: 2px solid rgb(0,51,102);
+  
 }
 
-.div-icon {
-}
 </style>

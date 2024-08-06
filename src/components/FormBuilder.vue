@@ -51,10 +51,13 @@ export default {
         },
       },
 
-      variablForm: {
+      newSurvey: {
         data: {
-          whatIsAdded: "",
+          add: "",
+          number: 0,
         },
+
+        currentArray: []
       },
     };
   },
@@ -66,7 +69,7 @@ export default {
       freeText: this.freeText,
       singleSelect: this.singleSelect,
       multiSelect: this.multiSelect,
-      variablForm: this.variablForm,
+      newSurvey: this.newSurvey,
     };
   },
 };

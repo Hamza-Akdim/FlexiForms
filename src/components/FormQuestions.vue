@@ -4,9 +4,7 @@
       <NavBar />
       <FreeText />
       <SingleSelect />
-      <MultiSelect />
-      <VariablForm />
-      <AddQuestion />
+      <NewForm />
       <AddQuestion />
     </div>
   </div>
@@ -17,18 +15,17 @@ import NavBar from "./Diverse/NavBar.vue";
 import AddQuestion from "./Questions/AddQuestion.vue";
 import FreeText from "./Questions/FreeText.vue";
 import SingleSelect from "./Questions/SingleSelect.vue";
-import MultiSelect from "./Questions/MultiSelect.vue";
-import VariablForm from "./Questions/VariablForm.vue";
+import NewForm from "./Questions/NewForm.vue";
 
 export default {
   name: "FormQuestions",
+  inject: ["newSurvey"],
   components: {
     NavBar,
     FreeText,
     SingleSelect,
     AddQuestion,
-    MultiSelect,
-    VariablForm,
+    NewForm,
   },
 };
 </script>

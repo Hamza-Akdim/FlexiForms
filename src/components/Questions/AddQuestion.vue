@@ -15,7 +15,7 @@
     </div>
     <div class="opend-card" :class="{ showCard: isDisplay }">
       <div class="servey-type">
-        <button class="inputBtn">
+        <button class="inputBtn" @click="addNewServey('freeText')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -33,7 +33,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn">
+        <button class="inputBtn" @click="addNewServey('singleSelect')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -51,7 +51,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn">
+        <button class="inputBtn" @click="addNewServey('multiSelect')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -70,7 +70,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn">
+        <button class="inputBtn" @click="addNewServey('rating')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -88,7 +88,7 @@
       </div>
 
       <div class="servey-type">
-        <button class="inputBtn">
+        <button class="inputBtn" @click="addNewServey('fileUpload')">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -113,14 +113,24 @@ export default {
   name: "AddQuestion",
   data() {
     return {
-      isDisplay: true
-    }
+      isDisplay: true,
+    };
   },
   methods: {
     displayCard() {
-      this.isDisplay = !this.isDisplay
+      this.isDisplay = !this.isDisplay;
+    },
+
+    addNewServey(survey) {
+      this.newSurvey.data.add = survey;
+      this.newSurvey.data.number++;
+
+      this.newSurvey.currentArray.push(this.newSurvey.data)
     },
   },
+  inject: ["newSurvey"],
+
+
 };
 </script>
 
@@ -140,7 +150,7 @@ button {
 }
 
 .icon-div {
-  background-color: #508C9B;
+  background-color: #508c9b;
   width: 8%;
   display: flex;
   justify-content: center;
@@ -184,7 +194,7 @@ button {
 
 .icon-opend-card {
   margin: 2px 5px 0 0;
-  color: #508C9B;
+  color: #508c9b;
 }
 
 .showCard {

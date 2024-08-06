@@ -60,7 +60,11 @@
           <v-btn
             v-bind:variant="buttonVariants[0]"
             class="inputBtn"
-            @click="toggleVariant(0); freeText.data.inputType= 'text'; freeText.data.placeholder='Type your answer here?'"
+            @click="
+              toggleVariant(0);
+              freeText.data.inputType = 'text';
+              freeText.data.placeholder = 'Type your answer here?';
+            "
           >
             Text
             <v-icon icon="mdi-message-text" class="iconBtn"></v-icon>
@@ -69,7 +73,11 @@
           <v-btn
             v-bind:variant="buttonVariants[1]"
             class="inputBtn"
-            @click="toggleVariant(1); freeText.data.inputType= 'email'; freeText.data.placeholder = 'example@email.com'"
+            @click="
+              toggleVariant(1);
+              freeText.data.inputType = 'email';
+              freeText.data.placeholder = 'example@email.com';
+            "
             >Email
             <v-icon icon="mdi-email" class="iconBtn"></v-icon>
           </v-btn>
@@ -77,7 +85,11 @@
           <v-btn
             v-bind:variant="buttonVariants[2]"
             class="inputBtn"
-            @click="toggleVariant(2); freeText.data.inputType= 'url'; freeText.data.placeholder= 'http://...'"
+            @click="
+              toggleVariant(2);
+              freeText.data.inputType = 'url';
+              freeText.data.placeholder = 'http://...';
+            "
           >
             URL
             <v-icon class="iconBtn" icon="mdi-link"></v-icon>
@@ -86,7 +98,11 @@
           <v-btn
             v-bind:variant="buttonVariants[3]"
             class="inputBtn"
-            @click="toggleVariant(3); freeText.data.inputType= 'number'; freeText.data.placeholder='36'"
+            @click="
+              toggleVariant(3);
+              freeText.data.inputType = 'number';
+              freeText.data.placeholder = '36';
+            "
           >
             Number<span class="numberIcon iconBtn">#</span>
           </v-btn>
@@ -94,7 +110,11 @@
           <v-btn
             v-bind:variant="buttonVariants[4]"
             class="inputBtn"
-            @click="toggleVariant(4); freeText.data.inputType= 'phone'; freeText.data.placeholder= '+1 123 456 789'"
+            @click="
+              toggleVariant(4);
+              freeText.data.inputType = 'phone';
+              freeText.data.placeholder = '+1 123 456 789';
+            "
           >
             Phone
             <v-icon icon="mdi-phone" class="iconBtn"></v-icon>
@@ -115,7 +135,8 @@ export default {
     };
   },
 
-  inject: ["freeText"],
+  inject: ["freeText", "newSurvey"],
+
 
   methods: {
     toggleVariant(index) {
@@ -146,7 +167,7 @@ export default {
 
 .icon-div {
   /* background-color: rgb(119, 136, 153); */
-  background-color: rgb(0,51,102);
+  background-color: rgb(0, 51, 102);
   width: 8%;
   display: flex;
   justify-content: center;
