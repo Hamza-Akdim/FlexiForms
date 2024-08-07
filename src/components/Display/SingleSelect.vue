@@ -44,7 +44,6 @@ export default {
   width: 80%;
   padding: 15px;
   display: none;
-
 }
 .close-btn {
   display: flex;
@@ -65,4 +64,6 @@ export default {
   justify-content: flex-end;
   margin-right: 15px;
 }
+
+
 </style>

@@ -25,6 +25,8 @@
         <SingleSelect />
       </div>
     </div>
+
+    <div class="changeToPhone"></div>
   </div>
 </template>
 
@@ -51,8 +53,8 @@ export default {
 .parent {
   width: 80%;
   height: 80%;
-  background-color:	rgb(240,248,255);
-  box-shadow : 2px 2px 20px rgba(0,51,102,0.2);
+  background-color:	#EEE;
+  box-shadow : 1.5px 1.5px 10px rgba(0,0,0,0.3);
   border-radius: 8px;
   padding: 5px;
 }

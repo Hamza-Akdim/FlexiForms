@@ -3,7 +3,7 @@
     <div>
       <button @click="displayCard()" class="btn-number">
         <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <div class="circle-icon">{{ surveyNumber}}</div>
+          <div class="circle-icon">{{ surveyNumber }}</div>
         </div>
         <div class="text-btn">
           <h5>{{ multiSelect.data.question }}</h5>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import MultiOptionsInput from "../Diverse/MultiOptionsInput.vue"
+import MultiOptionsInput from "../Diverse/MultiOptionsInput.vue";
 export default {
   name: "multi-selection-question",
 
@@ -57,8 +57,8 @@ export default {
     };
   },
 
-  props:{
-    surveyNumber: Number
+  props: {
+    surveyNumber: Number,
   },
 
   methods: {
@@ -67,15 +67,15 @@ export default {
     },
   },
 
-  inject: ["multiSelect","survey"],
+  inject: ["multiSelect", "survey"],
 };
 </script>
 
 <style scoped>
 .parent {
   padding: 0;
-  width: 85%;
-  margin-top: 10px;
+  width: 100%;
+  margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
 }

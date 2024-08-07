@@ -1,7 +1,6 @@
 <template>
   <template v-for="(form) in survey" >
-    {{ console.log(survey) }}
-    <FreeText v-if="form.type === 'freeText'" :key="form.number" style="margin-top: 10px" :surveyNumber="form.number"/>
+    <FreeText v-if="form.type === 'freeText'" :key="form.number" :surveyNumber="form.number"/>
     <SingleSelect v-if="form.type === 'singleSelect'" :key="form.number" :surveyNumber="form.number" />
     <MultiSelect v-if="form.type === 'multiSelect'" :key="form.number" :surveyNumber="form.number" />
   </template>

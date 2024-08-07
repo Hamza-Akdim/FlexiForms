@@ -50,9 +50,6 @@ export default {
   justify-content: flex-end;
 }
 
-.title {
-}
-
 .input-text {
   display: flex;
   justify-content: center;

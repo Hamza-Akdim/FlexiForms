@@ -2,10 +2,11 @@
   <div class="formQuestion">
     <div class="scroll-div">
       <NavBar />
-      <!-- <FreeText /> -->
-      <!-- <SingleSelect /> -->
-      <NewForm />
-      <AddQuestion />
+
+      <div style="width: 85%; padding-top: 5rem">
+        <NewForm />
+        <AddQuestion />
+      </div>
     </div>
   </div>
 </template>
@@ -13,8 +14,6 @@
 <script>
 import NavBar from "./Diverse/NavBar.vue";
 import AddQuestion from "./Questions/AddQuestion.vue";
-// import FreeText from "./Questions/FreeText.vue";
-// import SingleSelect from "./Questions/SingleSelect.vue";
 import NewForm from "./Questions/NewForm.vue";
 
 export default {
@@ -22,8 +21,6 @@ export default {
   inject: ["survey"],
   components: {
     NavBar,
-    // FreeText,
-    // SingleSelect,
     AddQuestion,
     NewForm,
   },

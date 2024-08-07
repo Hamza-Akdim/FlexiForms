@@ -66,6 +66,7 @@ export default {
   name: "one-select-options-input-form-question",
   inject: ["multiSelect"],
   mounted() {
+    this.multiSelect.data.options = [];
     for (let i = 0; i < 2; i++) {
       this.addOption(i);
     }
