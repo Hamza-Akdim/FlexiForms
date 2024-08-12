@@ -1,5 +1,6 @@
 <template>
   <template v-for="(form) in survey" >
+    {{ console.log(survey) }}
     <FreeText v-if="form.type === 'freeText'" :key="form.number" :surveyNumber="form.number"/>
     <SingleSelect v-if="form.type === 'singleSelect'" :key="form.number" :surveyNumber="form.number" />
     <MultiSelect v-if="form.type === 'multiSelect'" :key="form.number" :surveyNumber="form.number" />
@@ -14,12 +15,17 @@ import SingleSelect from "./SingleSelect.vue";
 export default {
   name: "new-form",
 
-  inject: ["survey"],
+  inject: ["freeText","survey"],
   components: {
     FreeText,
     SingleSelect,
     MultiSelect,
   },
+
+  beforeMount() {
+    this.survey.push({type: 'freeText', freeText: this.freeText, number: 1})
+  }
+
 };
 </script>
 

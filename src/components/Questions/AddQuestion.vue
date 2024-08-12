@@ -122,7 +122,7 @@ export default {
     },
 
     addNewSurvey(surveyType) {
-      this.survey.push({type: surveyType, number: this.survey.length +1 })
+      this.survey.push({type: surveyType,  number: this.survey.length +1 })
     },
   },
   inject: ["survey"],

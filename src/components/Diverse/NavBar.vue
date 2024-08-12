@@ -1,6 +1,10 @@
 <template>
   <div class="nav-bar">
-    <div class="div-icon">
+    <button
+      class="div-icon"
+      :class="{ clickColor: setColor[0] }"
+      @click="triggerEvent(0)"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -17,9 +21,13 @@
         />
       </svg>
       Questions
-    </div>
+    </button>
 
-    <div class="div-icon">
+    <button
+      class="div-icon"
+      :class="{ clickColor: setColor[1] }"
+      @click="triggerEvent(1)"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -33,9 +41,13 @@
         />
       </svg>
       Styling
-    </div>
+    </button>
 
-    <div class="div-icon">
+    <button
+      class="div-icon"
+      :class="{ clickColor: setColor[2] }"
+      @click="triggerEvent(2)"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -52,13 +64,31 @@
         />
       </svg>
       Settings
-    </div>
+    </button>
   </div>
 </template>
 
 <script>
 export default {
   name: "nav-bar-form-question",
+
+  data() {
+    return {
+      setColor: [true, false, false],
+    };
+  },
+
+  methods: {
+    triggerEvent(i) {
+      this.setColor.forEach((value, index) => {
+        if(i!=index){
+          this.setColor[index]= false
+        }else {
+          this.setColor[index] = true
+        }
+      });
+    },
+  },
 };
 </script>
 
@@ -73,8 +103,16 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: 2px solid rgb(0,51,102);
-  
+  border: 2px solid rgb(0, 51, 102);
 }
 
+.div-icon {
+  cursor: pointer;
+  height: 98%;
+  padding: 0 12px 0 12px;
+}
+
+.clickColor {
+  border-bottom: 3px solid rgb(102, 153, 204);
+}
 </style>

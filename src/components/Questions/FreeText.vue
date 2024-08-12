@@ -145,6 +145,7 @@ export default {
       this.isHidden = !this.isHidden;
     },
   },
+
 };
 </script>
 

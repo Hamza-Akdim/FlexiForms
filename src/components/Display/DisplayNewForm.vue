@@ -1,7 +1,6 @@
 <template>
   <FreeText v-if="survey[survey.length - 1].type === 'freeText'" />
   <SingleSelect v-if="survey[survey.length - 1].type === 'singleSelect'" />
-    {{ console.log(survey[survey.length - 1].type) }}
 </template>
 
 <script>

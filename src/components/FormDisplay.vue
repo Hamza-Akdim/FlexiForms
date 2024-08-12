@@ -25,7 +25,11 @@
     </div>
 
     <div class="change-device">
-      <div class="icon-device">
+      <button
+        class="icon-device"
+        :class="{ backgroundDeviceIcon: setBackgroundColor }"
+        @click="changeColor"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -38,9 +42,13 @@
             d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"
           />
         </svg>
-      </div>
+      </button>
 
-      <div class="icon-device">
+      <button
+        class="icon-device"
+        :class="{ backgroundDeviceIcon: !setBackgroundColor }"
+        @click="changeColor"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -54,7 +62,7 @@
           />
           <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
         </svg>
-      </div>
+      </button>
     </div>
   </div>
 </template>
@@ -67,6 +75,18 @@ export default {
   components: {
     DisplayNewForm,
   },
+
+  data() {
+    return {
+      setBackgroundColor: true,
+    };
+  },
+
+  methods: {
+    changeColor() {
+      this.setBackgroundColor = !this.setBackgroundColor;
+    },
+  },
 };
 </script>
 
@@ -74,11 +94,12 @@ export default {
 .formDispaly {
   width: 50vw;
   height: 100%;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 .parent {
   width: 80%;
@@ -118,12 +139,20 @@ export default {
 }
 
 .icon-device {
-  background-color: #eee;
   display: flex;
   height: 95%;
   width: 100%;
-  border-radius: 99999px;
+  cursor: pointer;
+  border-radius: 100px;
   justify-content: center;
   align-items: center;
+}
+
+.icon-device:hover {
+  background-color: #f3f4f7;
+}
+
+.backgroundDeviceIcon {
+  background-color: #eee;
 }
 </style>

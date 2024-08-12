@@ -51,9 +51,18 @@ export default {
         },
       },
 
-      survey: [{type: 'freeText', number: 1}, {type:'singleSelect', number: 2}],
+      survey: [],
     };
   },
+
+  //   computed: {
+  //   survey() {
+  //     return [
+  //       { type: "freeText", freeText: this.freeText, number: 1 },
+  //       { type: "singleSelect", singleSelect: this.singleSelect, number: 2 },
+  //     ];
+  //   },
+  // },
 
   methods: {},
 

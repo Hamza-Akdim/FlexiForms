@@ -50,12 +50,9 @@ export default {
 }
 
 .input-text {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  height: 50%;
+  height: 45%;
   margin-top: 10px;
-  padding: 15px;
+  padding: 9px 15px 15px 15px;
 }
 
 .next-btn {
