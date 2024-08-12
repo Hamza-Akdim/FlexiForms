@@ -23,7 +23,7 @@ export default {
   },
 
   beforeMount() {
-    this.survey.push({type: 'freeText', freeText: this.freeText, number: 1})
+    this.survey.push({type: 'freeText', data: this.freeText, number: 1})
   }
 
 };

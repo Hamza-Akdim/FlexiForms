@@ -25,46 +25,27 @@ export default {
   data() {
     return {
       freeText: {
-        data: {
-          question: "What would you like to know?",
-          description: "This is an example servey",
-          placeholder: "Type your answer here?",
-          inputType: "text",
-        },
+        question: "What would you like to know?",
+        description: "This is an example servey",
+        placeholder: "Type your answer here?",
+        inputType: "text",
       },
 
       singleSelect: {
-        data: {
-          question: "What do you do?",
-          description: "Can't do both",
-          options: [],
-        },
-
-        method: {},
+        question: "What do you do?",
+        description: "Can't do both",
+        options: [],
       },
 
       multiSelect: {
-        data: {
-          question: "What motivates you in your job?",
-          description: "You can select more that one option",
-          options: [],
-        },
+        question: "What motivates you in your job?",
+        description: "You can select more that one option",
+        options: [],
       },
 
       survey: [],
     };
   },
-
-  //   computed: {
-  //   survey() {
-  //     return [
-  //       { type: "freeText", freeText: this.freeText, number: 1 },
-  //       { type: "singleSelect", singleSelect: this.singleSelect, number: 2 },
-  //     ];
-  //   },
-  // },
-
-  methods: {},
 
   provide() {
     return {

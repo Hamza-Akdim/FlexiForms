@@ -2,7 +2,7 @@
   <div class="parent-div">
     <div
       class="div-input"
-      v-for="(option, index) in singleSelect.data.options"
+      v-for="(option, index) in survey[survey.length - 1].data.options"
       :key="index"
     >
       <input
@@ -25,33 +25,13 @@
       </label>
     </div>
 
-    <!-- <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[1]" />
-      <label :for="singleSelect.data.options[1]">
-        {{ singleSelect.data.options[1] }}
-      </label>
-    </div>
-
-    <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[0]" />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
-      </label>
-    </div>
-
-    <div class="div-input">
-      <input type="radio" name="oneSelect" :id="singleSelect.data.options[0]" />
-      <label :for="singleSelect.data.options[0]">
-        {{ singleSelect.data.options[0] }}
-      </label>
-    </div> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "single-select-input",
-  inject: ["singleSelect"],
+  inject: ["survey"],
 };
 </script>
 

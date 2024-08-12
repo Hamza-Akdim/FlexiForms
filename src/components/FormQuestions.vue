@@ -18,7 +18,6 @@ import NewForm from "./Questions/NewForm.vue";
 
 export default {
   name: "FormQuestions",
-  inject: ["survey"],
   components: {
     NavBar,
     AddQuestion,

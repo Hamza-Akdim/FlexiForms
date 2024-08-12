@@ -122,12 +122,35 @@ export default {
     },
 
     addNewSurvey(surveyType) {
-      this.survey.push({type: surveyType,  number: this.survey.length +1 })
+      if (surveyType === "freeText") {
+        this.survey.push({
+          type: surveyType,
+          data: this.freeText,
+          number: this.survey.length + 1,
+        });
+        return;
+      }
+
+      if (surveyType === "singleSelect") {
+        this.survey.push({
+          type: surveyType,
+          data: this.singleSelect,
+          number: this.survey.length + 1,
+        });
+        return;
+      }
+
+      if (surveyType === "multiSelect") {
+        this.survey.push({
+          type: surveyType,
+          data: this.multiSelect,
+          number: this.survey.length + 1,
+        });
+        return;
+      }
     },
   },
-  inject: ["survey"],
-
-
+  inject: ["freeText", "singleSelect", "multiSelect", "survey"],
 };
 </script>
 

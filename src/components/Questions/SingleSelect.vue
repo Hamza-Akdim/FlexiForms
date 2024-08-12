@@ -6,7 +6,7 @@
           <div class="circle-icon">{{ surveyNumber }}</div>
         </div>
         <div class="text-btn">
-          <h5>{{ singleSelect.data.question }}</h5>
+          <h5>{{ survey[survey.length - 1].data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Single Select
           </div>
@@ -20,7 +20,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="singleSelect.data.question"
+          v-model="survey[survey.length - 1].data.question"
         />
       </div>
 
@@ -29,7 +29,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="singleSelect.data.description"
+          v-model="survey[survey.length - 1].data.description"
         />
       </div>
 
@@ -57,15 +57,14 @@ export default {
   },
 
   props: {
-    surveyNumber: Number
+    surveyNumber: Number,
   },
   methods: {
     displayCard() {
       this.isHidden = !this.isHidden;
     },
   },
-
-  inject: ["singleSelect", "survey"],
+  inject: ["survey"],
 };
 </script>
 
@@ -80,7 +79,7 @@ export default {
 
 .icon-div {
   /* background-color: rgb(119, 136, 153); */
-  background-color: rgb(0,51,102);
+  background-color: rgb(0, 51, 102);
   width: 8%;
   display: flex;
   justify-content: center;
@@ -100,7 +99,6 @@ export default {
   font-size: 14px;
   font-weight: 600;
 }
-
 
 .btn-number {
   width: 100%;
@@ -148,7 +146,6 @@ export default {
 .custom-text-field:focus-visible {
   outline: none;
 }
-
 
 .showCard {
   display: none;

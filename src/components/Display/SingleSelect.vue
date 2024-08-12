@@ -5,11 +5,11 @@
     </div>
 
     <div class="title">
-      <v-card-title>{{ singleSelect.data.question }}</v-card-title>
+      <v-card-title>{{ survey[survey.length - 1].data.question }}</v-card-title>
     </div>
 
     <div class="subtitle">
-      <v-card-subtitle>{{ singleSelect.data.description }}</v-card-subtitle>
+      <v-card-subtitle>{{ survey[survey.length - 1].data.description }}</v-card-subtitle>
     </div>
 
     <div class="input-text">
@@ -34,7 +34,7 @@ export default {
     SingleSelectInput,
   },
 
-  inject: ["singleSelect"],
+  inject: ["survey"],
 };
 </script>
 

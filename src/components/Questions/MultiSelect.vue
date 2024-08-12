@@ -6,7 +6,7 @@
           <div class="circle-icon">{{ surveyNumber }}</div>
         </div>
         <div class="text-btn">
-          <h5>{{ multiSelect.data.question }}</h5>
+          <h5>{{ survey[survey.length - 1].data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Multi Select
           </div>
@@ -20,7 +20,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="multiSelect.data.question"
+          v-model="survey[survey.length - 1].data.question"
         />
       </div>
 
@@ -29,7 +29,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="multiSelect.data.description"
+          v-model="survey[survey.length - 1].data.description"
         />
       </div>
 
@@ -67,7 +67,7 @@ export default {
     },
   },
 
-  inject: ["multiSelect", "survey"],
+  inject: ["survey"],
 };
 </script>
 

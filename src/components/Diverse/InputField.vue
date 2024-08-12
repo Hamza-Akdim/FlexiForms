@@ -1,8 +1,8 @@
 <template>
   <v-text-field
-    :type="freeText.data.inputType"
+    :type="survey[survey.length - 1].data.inputType"
     variant="outlined"
-    :placeholder="freeText.data.placeholder"
+    :placeholder="survey[survey.length - 1].data.placeholder"
   ></v-text-field>
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   name: "input-field-free-text",
 
-  inject: ["freeText"],
+  inject: ["survey"],
 };
 </script>
 

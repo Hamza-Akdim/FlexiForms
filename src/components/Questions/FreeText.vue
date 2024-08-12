@@ -3,10 +3,10 @@
     <div>
       <button @click="displayCard()" class="btn-number">
         <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <div class="circle-icon">{{ surveyNumber}}</div>
+          <div class="circle-icon">{{ surveyNumber }}</div>
         </div>
         <div class="text-btn">
-          <h5>{{ freeText.data.question }}</h5>
+          <h5>{{ survey[survey.length - 1].data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Free Text
           </div>
@@ -20,7 +20,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="freeText.data.question"
+          v-model="survey[survey.length - 1].data.question"
         />
       </div>
 
@@ -29,7 +29,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="freeText.data.description"
+          v-model="survey[survey.length - 1].data.description"
         />
       </div>
 
@@ -38,7 +38,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="freeText.data.placeholder"
+          v-model="survey[survey.length - 1].data.placeholder"
         />
       </div>
 
@@ -50,8 +50,9 @@
             class="inputBtn"
             @click="
               toggleVariant(0);
-              freeText.data.inputType = 'text';
-              freeText.data.placeholder = 'Type your answer here?';
+              survey[survey.length - 1].data.inputType = 'text';
+              survey[survey.length - 1].data.placeholder =
+                'Type your answer here?';
             "
           >
             Text
@@ -63,8 +64,8 @@
             class="inputBtn"
             @click="
               toggleVariant(1);
-              freeText.data.inputType = 'email';
-              freeText.data.placeholder = 'example@email.com';
+              survey[survey.length - 1].data.inputType = 'email';
+              survey[survey.length - 1].data.placeholder = 'example@email.com';
             "
             >Email
             <v-icon icon="mdi-email" class="iconBtn"></v-icon>
@@ -75,8 +76,8 @@
             class="inputBtn"
             @click="
               toggleVariant(2);
-              freeText.data.inputType = 'url';
-              freeText.data.placeholder = 'http://...';
+              survey[survey.length - 1].data.inputType = 'url';
+              survey[survey.length - 1].data.placeholder = 'http://...';
             "
           >
             URL
@@ -88,8 +89,8 @@
             class="inputBtn"
             @click="
               toggleVariant(3);
-              freeText.data.inputType = 'number';
-              freeText.data.placeholder = '36';
+              survey[survey.length - 1].data.inputType = 'number';
+              survey[survey.length - 1].data.placeholder = '36';
             "
           >
             Number<span class="numberIcon iconBtn">#</span>
@@ -100,8 +101,8 @@
             class="inputBtn"
             @click="
               toggleVariant(4);
-              freeText.data.inputType = 'phone';
-              freeText.data.placeholder = '+1 123 456 789';
+              survey[survey.length - 1].data.inputType = 'phone';
+              survey[survey.length - 1].data.placeholder = '+1 123 456 789';
             "
           >
             Phone
@@ -124,11 +125,10 @@ export default {
   },
 
   props: {
-    surveyNumber: Number
+    surveyNumber: Number,
   },
 
-  inject: ["freeText", "survey"],
-
+  inject: ["survey"],
 
   methods: {
     toggleVariant(index) {
@@ -145,7 +145,6 @@ export default {
       this.isHidden = !this.isHidden;
     },
   },
-
 };
 </script>
 
