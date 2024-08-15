@@ -3,10 +3,10 @@
     <div>
       <button @click="displayCard()" class="btn-number">
         <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <div class="circle-icon">{{ surveyNumber }}</div>
+          <div class="circle-icon">{{ questionNumber }}</div>
         </div>
         <div class="text-btn">
-          <h5>{{ survey[survey.length - 1].data.question }}</h5>
+          <h5>{{ survey[questionNumber - 1].data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Single Select
           </div>
@@ -20,7 +20,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="survey[survey.length - 1].data.question"
+          v-model="survey[questionNumber - 1].data.question"
         />
       </div>
 
@@ -29,7 +29,7 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="survey[survey.length - 1].data.description"
+          v-model="survey[questionNumber - 1].data.description"
         />
       </div>
 
@@ -57,7 +57,7 @@ export default {
   },
 
   props: {
-    surveyNumber: Number,
+    questionNumber: Number,
   },
   methods: {
     displayCard() {

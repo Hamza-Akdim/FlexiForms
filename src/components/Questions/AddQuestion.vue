@@ -122,10 +122,18 @@ export default {
     },
 
     addNewSurvey(surveyType) {
+      const id = Date.now();
+
       if (surveyType === "freeText") {
         this.survey.push({
+          id,
           type: surveyType,
-          data: this.freeText,
+          data: {
+            question: "What would you like to know?",
+            description: "This is an example servey",
+            placeholder: "Type your answer here?",
+            inputType: "text",
+          },
           number: this.survey.length + 1,
         });
         return;
@@ -133,8 +141,13 @@ export default {
 
       if (surveyType === "singleSelect") {
         this.survey.push({
+          id,
           type: surveyType,
-          data: this.singleSelect,
+          data: {
+            question: "What do you do?",
+            description: "Can't do both",
+            options: [],
+          },
           number: this.survey.length + 1,
         });
         return;
@@ -142,8 +155,13 @@ export default {
 
       if (surveyType === "multiSelect") {
         this.survey.push({
+          id,
           type: surveyType,
-          data: this.multiSelect,
+          data: {
+            question: "What motivates you in your job?",
+            description: "You can select more that one option",
+            options: [],
+          },
           number: this.survey.length + 1,
         });
         return;

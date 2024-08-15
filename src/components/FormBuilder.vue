@@ -24,24 +24,24 @@ export default {
 
   data() {
     return {
-      freeText: {
-        question: "What would you like to know?",
-        description: "This is an example servey",
-        placeholder: "Type your answer here?",
-        inputType: "text",
-      },
+      // freeText: {
+      //   question: "What would you like to know?",
+      //   description: "This is an example servey",
+      //   placeholder: "Type your answer here?",
+      //   inputType: "text",
+      // },
 
-      singleSelect: {
-        question: "What do you do?",
-        description: "Can't do both",
-        options: [],
-      },
+      // singleSelect: {
+      //   question: "What do you do?",
+      //   description: "Can't do both",
+      //   options: [],
+      // },
 
-      multiSelect: {
-        question: "What motivates you in your job?",
-        description: "You can select more that one option",
-        options: [],
-      },
+      // multiSelect: {
+      //   question: "What motivates you in your job?",
+      //   description: "You can select more that one option",
+      //   options: [],
+      // },
 
       survey: [],
     };
@@ -49,9 +49,9 @@ export default {
 
   provide() {
     return {
-      freeText: this.freeText,
-      singleSelect: this.singleSelect,
-      multiSelect: this.multiSelect,
+      // freeText: this.freeText,
+      // singleSelect: this.singleSelect,
+      // multiSelect: this.multiSelect,
       survey: this.survey,
     };
   },

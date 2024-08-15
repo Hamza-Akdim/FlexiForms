@@ -104,7 +104,9 @@ export default {
 .parent {
   width: 80%;
   height: 80%;
-  background-color: #eee;
+  /* background-color: #eee; */
+--tw-bg-opacity: 1;
+  background-color: rgb(241 245 249/var(--tw-bg-opacity));
   box-shadow: 1.5px 1.5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   padding: 5px;
@@ -130,7 +132,7 @@ export default {
   height: 2.8rem;
   width: 6.5rem;
   padding: 3px;
-  border: 2px solid #cbcaca;
+  border: 2px solid rgb(192, 192, 192);
   border-radius: 99px;
   display: flex;
   justify-content: center;
