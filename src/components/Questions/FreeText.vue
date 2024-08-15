@@ -128,7 +128,7 @@ export default {
     questionNumber: Number,
   },
 
-  inject: ["survey"],
+  inject: ["survey", "currentQuestion"],
 
   methods: {
     toggleVariant(index) {
@@ -143,6 +143,7 @@ export default {
 
     displayCard() {
       this.isHidden = !this.isHidden;
+      this.currentQuestion = this.survey[this.questionNumber - 1].id;
     },
   },
 };
@@ -154,7 +155,7 @@ export default {
   width: 100%;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .icon-div {

@@ -61,13 +61,14 @@ export default {
     questionNumber: Number,
   },
 
+  inject: ["survey", "currentQuestion"],
+
   methods: {
     displayCard() {
       this.isHidden = !this.isHidden;
+      this.currentQuestion = this.survey[this.questionNumber - 1].id;
     },
   },
-
-  inject: ["survey"],
 };
 </script>
 

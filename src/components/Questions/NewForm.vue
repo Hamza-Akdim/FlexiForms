@@ -1,10 +1,7 @@
 <template>
   <template v-for="form in survey" :key="form.id">
-    <FreeText
-      v-if="form.type === 'freeText'"
-      :questionNumber="form.number"
-    />
-    <SingleSelect 
+    <FreeText v-if="form.type === 'freeText'" :questionNumber="form.number" />
+    <SingleSelect
       v-if="form.type === 'singleSelect'"
       :questionNumber="form.number"
     />
@@ -23,7 +20,7 @@ import SingleSelect from "./SingleSelect.vue";
 export default {
   name: "new-form",
 
-  inject: ["survey"],
+  inject: ["survey", "currentQuestion"],
   components: {
     FreeText,
     SingleSelect,
@@ -31,8 +28,10 @@ export default {
   },
 
   beforeMount() {
+    const id = Date.now();
+
     this.survey.push({
-      id: Date.now(),
+      id,
       type: "freeText",
       data: {
         question: "What would you like to know?",
@@ -42,6 +41,8 @@ export default {
       },
       number: 1,
     });
+
+    this.currentQuestion= id;
   },
 };
 </script>

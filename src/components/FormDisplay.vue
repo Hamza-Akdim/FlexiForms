@@ -2,11 +2,11 @@
   <div class="formDispaly">
     <div class="parent">
       <div class="header-parent">
-        <div style="font-size: 20px">in your web app</div>
+        <div style="font-size: 15px;">Your web app</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="14"
+          height="14"
           fill="currentColor"
           class="bi bi-arrows-fullscreen"
           viewBox="0 0 16 16"
@@ -104,12 +104,12 @@ export default {
 .parent {
   width: 80%;
   height: 80%;
-  /* background-color: #eee; */
 --tw-bg-opacity: 1;
   background-color: rgb(241 245 249/var(--tw-bg-opacity));
-  box-shadow: 1.5px 1.5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.3);
   border-radius: 8px;
-  padding: 5px;
+  border: 0.5px solid gray;
+  padding: 10px 5px 5px 5px;
 }
 
 .header-parent {
@@ -118,7 +118,7 @@ export default {
   align-items: center;
   padding: 0 10px;
   width: 100%;
-  height: 10%;
+  height: 5%;
 }
 
 .display-form {
