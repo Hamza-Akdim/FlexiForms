@@ -100,7 +100,8 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 15px;
-}
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252/var(--tw-bg-opacity));}
 .parent {
   width: 80%;
   height: 80%;

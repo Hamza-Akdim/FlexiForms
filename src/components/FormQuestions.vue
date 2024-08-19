@@ -3,7 +3,7 @@
     <div class="scroll-div">
       <NavBar />
 
-      <div style="width: 85%; padding-top: 5rem">
+      <div style="width: 85%; padding-top: 5rem;">
         <NewForm />
         <AddQuestion />
       </div>
@@ -31,6 +31,8 @@ export default {
 .formQuestion {
   width: 50vw;
   height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252/var(--tw-bg-opacity));
 }
 
 .scroll-div {

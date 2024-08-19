@@ -179,6 +179,8 @@ export default {
   margin-top: 10px;
   border-radius: 8px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  background-color: white;
+
 }
 
 button {
