@@ -8,7 +8,7 @@
         <div class="text-btn">
           <h5>{{ survey[questionNumber - 1].data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
-            Multi Select
+            Rating
           </div>
         </div>
         <div class="trash-icon">
@@ -53,23 +53,34 @@
         />
       </div>
 
-      <div class="question">
-        <label>Options*</label>
+      <div class="rate-label">
+        <div class="label-div">
+          <label>Lower Label</label>
+          <input
+            type="text"
+            class="custom-text-field"
+            v-model="survey[questionNumber - 1].data.lowerLabel"
+          />
+        </div>
 
-        <MultiOptionsInput :questionNumber="questionNumber" />
+        <div class="label-div">
+          <label>Upper Label</label>
+          <input
+            type="text"
+            class="custom-text-field"
+            v-model="survey[questionNumber - 1].data.upperLabel"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import MultiOptionsInput from "../Diverse/MultiOptionsInput.vue";
 export default {
   name: "multi-selection-question",
 
-  components: {
-    MultiOptionsInput,
-  },
+  components: {},
 
   data() {
     return {
@@ -208,6 +219,13 @@ export default {
 
 .custom-text-field:focus-visible {
   outline: none;
+}
+
+.rate-label {
+  padding: 0px 10px 20px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .showCard {

@@ -5,32 +5,18 @@
       v-for="(option, index) in survey[survey.length - 1].data.options"
       :key="index"
     >
-      <input
-        v-if="index == 0"
-        type="radio"
-        name="oneSelect"
-        :id="index"
-        checked
-      />
-
-      <input
-        v-else
-        type="radio"
-        name="oneSelect"
-        :id="index"
-      />
+      <input type="checkbox" :id="index" />
 
       <label :for="index">
         {{ option }}
       </label>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "single-select-input-display",
+  name: "mlti-select-input-display",
   inject: ["survey"],
 };
 </script>

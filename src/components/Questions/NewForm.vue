@@ -1,12 +1,19 @@
 <template>
   <template v-for="form in survey" :key="form.id">
     <FreeText v-if="form.type === 'freeText'" :questionNumber="form.number" />
+
     <SingleSelect
       v-if="form.type === 'singleSelect'"
       :questionNumber="form.number"
     />
+
     <MultiSelect
       v-if="form.type === 'multiSelect'"
+      :questionNumber="form.number"
+    />
+
+    <RatingQuestion
+      v-if="form.type === 'rating'"
       :questionNumber="form.number"
     />
   </template>
@@ -15,6 +22,7 @@
 <script>
 import FreeText from "./FreeText.vue";
 import MultiSelect from "./MultiSelect.vue";
+import RatingQuestion from "./RatingQuestion.vue";
 import SingleSelect from "./SingleSelect.vue";
 
 export default {
@@ -25,6 +33,7 @@ export default {
     FreeText,
     SingleSelect,
     MultiSelect,
+    RatingQuestion,
   },
 
   beforeMount() {
@@ -42,7 +51,7 @@ export default {
       number: 1,
     });
 
-    this.currentQuestion= id;
+    this.currentQuestion = id;
   },
 };
 </script>

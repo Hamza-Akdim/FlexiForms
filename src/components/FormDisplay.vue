@@ -2,7 +2,7 @@
   <div class="formDispaly">
     <div class="parent">
       <div class="header-parent">
-        <div style="font-size: 15px;">Your web app</div>
+        <div style="font-size: 15px">Your web app</div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="14"
@@ -101,12 +101,14 @@ export default {
   align-items: center;
   gap: 15px;
   --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252/var(--tw-bg-opacity));}
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+
 .parent {
   width: 80%;
   height: 80%;
---tw-bg-opacity: 1;
-  background-color: rgb(241 245 249/var(--tw-bg-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
   box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.3);
   border-radius: 8px;
   border: 0.5px solid gray;

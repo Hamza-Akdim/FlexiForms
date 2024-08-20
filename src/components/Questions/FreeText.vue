@@ -20,6 +20,8 @@
             class="bi bi-trash"
             viewBox="0 0 16 16"
             color="grey"
+            :class="{unableRemove: block}"
+            @click.stop="removeQuestion()"
           >
             <path
               d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
@@ -148,6 +150,13 @@ export default {
 
   inject: ["survey", "currentQuestion"],
 
+  computed: {
+    block () {
+      if(this.survey.length<2) return true;
+      else return false;
+    }
+  },
+
   methods: {
     toggleVariant(index) {
       this.buttonVariants.forEach((variant, i) => {
@@ -162,6 +171,18 @@ export default {
     displayCard() {
       this.isHidden = !this.isHidden;
       this.currentQuestion = this.survey[this.questionNumber - 1].id;
+    },
+
+    removeQuestion() {
+      if (this.survey.length < 2) return;
+
+      let index = this.questionNumber - 1;
+
+      for (let i = index + 1; i < this.survey.length; i++) {
+        this.survey[i].number = this.survey[i].number - 1;
+      }
+
+      this.survey.splice(index, 1);
     },
   },
 };
@@ -223,8 +244,16 @@ export default {
   padding: 15px 20px;
 }
 
-.bi-trash:hover{
+.bi-trash:hover {
   color: black;
+}
+
+.unableRemove{
+  cursor: no-drop;
+}
+
+.unableRemove:hover{
+  color: grey;;
 }
 
 .opend-card {

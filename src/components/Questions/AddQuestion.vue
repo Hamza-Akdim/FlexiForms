@@ -13,6 +13,7 @@
         </div>
       </button>
     </div>
+
     <div class="opend-card" :class="{ showCard: isDisplay }">
       <div class="servey-type">
         <button class="inputBtn" @click="addNewSurvey('freeText')">
@@ -166,9 +167,25 @@ export default {
         });
         return;
       }
+
+      if (surveyType === "rating") {
+        this.survey.push({
+          id,
+          type: surveyType,
+          data: {
+            question: "How would you rate",
+            description: "Don't worry, be honest.",
+            rate: 0,
+            lowerLabel: "Not good",
+            upperLabel: "Very good",
+          },
+          number: this.survey.length + 1,
+        });
+        return;
+      }
     },
   },
-  inject: ["freeText", "singleSelect", "multiSelect", "survey"],
+  inject: ["survey"],
 };
 </script>
 
@@ -178,9 +195,8 @@ export default {
   width: 100%;
   margin-top: 10px;
   border-radius: 8px;
-  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
   background-color: white;
-
 }
 
 button {
