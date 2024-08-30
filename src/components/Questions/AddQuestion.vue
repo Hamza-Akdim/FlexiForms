@@ -193,6 +193,7 @@ export default {
 .parent {
   padding: 0;
   width: 100%;
+  margin-bottom: 20px;
   margin-top: 10px;
   border-radius: 8px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -206,7 +207,7 @@ button {
 }
 
 .icon-div {
-  background-color: #508c9b;
+  background-color: rgb(102, 153, 204);
   width: 8%;
   display: flex;
   justify-content: center;
@@ -250,7 +251,7 @@ button {
 
 .icon-opend-card {
   margin: 2px 5px 0 0;
-  color: #508c9b;
+  color: rgb(102, 153, 204);
 }
 
 .showCard {

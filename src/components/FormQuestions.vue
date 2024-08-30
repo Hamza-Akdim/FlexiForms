@@ -6,6 +6,7 @@
       <div style="width: 85%; padding-top: 5rem;">
         <NewForm />
         <AddQuestion />
+        <ThankQuestion />
       </div>
     </div>
   </div>
@@ -15,14 +16,16 @@
 import NavBar from "./Diverse/NavBar.vue";
 import AddQuestion from "./Questions/AddQuestion.vue";
 import NewForm from "./Questions/NewForm.vue";
+import ThankQuestion from "./Questions/ThankQuestion.vue";
 
 export default {
   name: "FormQuestions",
-  // inject: ["survey"],
+  inject: ["survey"],
   components: {
     NavBar,
     AddQuestion,
     NewForm,
+    ThankQuestion
   },
 };
 </script>

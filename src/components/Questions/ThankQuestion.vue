@@ -1,17 +1,35 @@
 <template>
   <div class="parent">
     <div>
-      <button @click="displayCard()" class="btn-number">
-        <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <div class="circle-icon">{{ questionNumber }}</div>
+      <button @click="handleClickBtn()" class="btn-number">
+        <div class="icon-div" :class="{ adjustReduisBorder: isDisplay }">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            class="bi bi-emoji-smile"
+            viewBox="0 0 16 16"
+            color="white"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"
+            />
+          </svg>
         </div>
+
         <div class="text-btn">
-          <h5>{{ survey[questionNumber - 1].data.question }}</h5>
+          <h5 v-if="click != 0">{{ survey[indexThank].data.note }}</h5>
+          <h5 v-else>Thank you!</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
-            Multi Select
+            Ending Card
           </div>
         </div>
-        <div class="trash-icon">
+
+        <div class="trash-icon" :class="{ removeThank: enable }">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -21,7 +39,7 @@
             viewBox="0 0 16 16"
             color="grey"
             :class="{ unableRemove: block }"
-            @click.stop="removeQuestion()"
+            @click.stop="removeThanksCard()"
           >
             <path
               d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
@@ -34,13 +52,13 @@
       </button>
     </div>
 
-    <div class="opend-card" :class="{ showCard: isHidden }">
+    <div v-if="click != 0" class="opend-card" :class="{ showCard: isDisplay }">
       <div class="question">
-        <label>Question*</label>
+        <label>Note*</label>
         <input
           type="text"
           class="custom-text-field"
-          v-model="survey[questionNumber - 1].data.question"
+          v-model="survey[indexThank].data.note"
         />
       </div>
 
@@ -49,39 +67,29 @@
         <input
           type="text"
           class="custom-text-field"
-          v-model="survey[questionNumber - 1].data.description"
+          v-model="survey[indexThank].data.description"
         />
-      </div>
-
-      <div class="question">
-        <label>Options*</label>
-
-        <MultiOptionsInput :questionNumber="questionNumber" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import MultiOptionsInput from "../Diverse/MultiOptionsInput.vue";
 export default {
   name: "multi-selection-question",
 
-  components: {
-    MultiOptionsInput,
-  },
+  components: {},
 
   data() {
     return {
-      isHidden: false,
+      isDisplay: true,
+      click: 0,
+      enable: true,
+      indexThank: 0,
     };
   },
 
-  props: {
-    questionNumber: Number,
-  },
-
-  inject: ["survey", "currentQuestion"],
+  inject: ["survey"],
 
   computed: {
     block() {
@@ -91,21 +99,46 @@ export default {
   },
 
   methods: {
-    displayCard() {
-      this.isHidden = !this.isHidden;
-      this.currentQuestion = this.survey[this.questionNumber - 1].id;
+    handleClickBtn() {
+      this.isDisplay = !this.isDisplay;
+
+      this.click++;
+
+      if (this.click < 2) {
+        this.enable = !this.enable;
+
+        const id = Date.now();
+
+        this.survey.push({
+          id,
+          type: "thank",
+          data: {
+            note: "Thank you!",
+            description: "We appreciate your feedback.",
+          },
+          number: this.survey.length + 1,
+        });
+        this.indexThank = this.survey.length - 1;
+      }
+      // this.currentQuestion = this.survey[this.indexThank].id;
     },
 
-    removeQuestion() {
+    removeThanksCard() {
       if (this.survey.length < 2) return;
 
-      let index = this.questionNumber - 1;
+      if (!this.isDisplay) this.isDisplay = !this.isDisplay;
+
+      let index = this.indexThank;
 
       for (let i = index + 1; i < this.survey.length; i++) {
         this.survey[i].number = this.survey[i].number - 1;
       }
 
       this.survey.splice(index, 1);
+
+      this.click = 0;
+
+      this.enable = !this.enable;
     },
   },
 };
@@ -121,32 +154,19 @@ export default {
   background-color: white;
 }
 
+.btn-number {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
 .icon-div {
-  background-color: rgb(0, 51, 102);
+  background-color: rgb(169, 169, 169);
   min-width: 8%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-top-left-radius: 8px;
-}
-
-.circle-icon {
-  width: 22px;
-  height: 22px;
-  border: 1.5px solid white;
-  border-radius: 50%;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.btn-number {
-  width: 100%;
-  height: 100%;
-  display: flex;
 }
 
 .text-btn {
@@ -215,5 +235,9 @@ export default {
 
 .adjustReduisBorder {
   border-bottom-left-radius: 8px;
+}
+
+.removeThank {
+  display: none;
 }
 </style>

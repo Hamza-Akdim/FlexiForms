@@ -31,6 +31,15 @@
       <RateStars />
     </div>
 
+    <div class="parent-label">
+      <div class="label">
+        {{ survey[survey.length - 1].data.lowerLabel }}
+      </div>
+      <div class="label">
+        {{ survey[survey.length - 1].data.upperLabel }}
+      </div>
+    </div>
+
     <div class="next-btn">
       <button class="custom-btn">Next</button>
     </div>
@@ -66,19 +75,33 @@ export default {
 }
 
 .rate-stars {
-  background-color: aquamarine;
-  margin-top: 20px;
-  padding: 15px 0px 15px 15px;
+  margin-top: 10px;
+  padding: 10px 0px 15px 15px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
+}
+
+.parent-label {
+  padding-left: 18px;
+  padding-right: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  height: 18px;
 }
 
 .next-btn {
   display: flex;
   justify-content: flex-end;
   margin-right: 15px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .custom-btn {
