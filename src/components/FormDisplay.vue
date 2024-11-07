@@ -1,6 +1,6 @@
 <template>
-  <div class="formDispaly">
-    <div class="parent">
+  <div class="formDispaly max-w-[1500px] mx-auto min-h-[500px]">
+    <div class="parent ">
       <div class="header-parent">
         <div style="font-size: 15px">Your web app</div>
         <svg
@@ -92,20 +92,18 @@ export default {
 
 <style scoped>
 .formDispaly {
-  width: 50vw;
   height: 100%;
-  padding-top: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
 .parent {
   width: 80%;
+  /* min-h-[500px] max-h-[560px] */
   height: 80%;
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));

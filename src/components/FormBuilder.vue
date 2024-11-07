@@ -1,9 +1,24 @@
 <template>
-  <div class="parent">
+  <div class="hidden sm:block w-full h-full overflow-hidden">
     <FormHeader />
-    <div class="parent1">
-      <FormQuestions />
-      <FormDisplay />
+    <!-- 92% to limit the height to not overcome the screen heigth because of FormQuestion Content -->
+    <div class="grid md:grid-cols-2 h-[92%]">
+      <div class="overflow-y-auto relative z-0">
+        <FormQuestions />
+      </div>
+
+      <div class="hidden md:block">
+        <FormDisplay />
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="sm:hidden h-full flex flex-col justify-center items-center gap-3 p-3"
+  >
+    <img class="" src="disabled.png" alt="/" />
+    <div class="text-center text-xl font-medium text-gray-500">
+      FlexiForms is not availible for devices with smaller resolutions.
     </div>
   </div>
 </template>
@@ -25,7 +40,7 @@ export default {
   data() {
     return {
       currentQuestion: null,
-      survey: []
+      survey: [],
     };
   },
 
@@ -38,17 +53,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.parent {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-}
-.parent1 {
-  display: flex;
-  height: 92%;
-  justify-content: space-between;
-  align-items: center;
-}
-</style>
+<style scoped></style>

@@ -4,7 +4,7 @@ import { createApp } from "vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "./plugins/vuetify";
-import "./main.css"
+import "./input.css"
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";

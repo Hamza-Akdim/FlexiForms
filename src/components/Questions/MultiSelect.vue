@@ -1,11 +1,11 @@
 <template>
-  <div class="parent">
+  <div class="p-0 w-[85%] mx-auto mb-5 border rounded-lg shadow-custom bg-white">
     <div>
-      <button @click="displayCard()" class="btn-number">
-        <div class="icon-div" :class="{ adjustReduisBorder: isHidden }">
-          <div class="circle-icon">{{ questionNumber }}</div>
+      <button @click="displayCard()" class="w-full h-full flex">
+        <div class="bg-custom-blue min-w-[8%] flex justify-center items-center rounded-tl-icon-custom min-h-[70px]" :class="{ adjustReduisBorder: isHidden }">
+          <div class="w-[22px] border-[1.5px] border-solid border-white rounded-circle text-white flex items-center justify-center text-[14px] font-semibold">{{ questionNumber }}</div>
         </div>
-        <div class="text-btn">
+        <div class="w-[92%] pt-[10px] pr-0 pb-0 pl-[15px] flex flex-col justify-center items-start gap-[5px]">
           <h5>{{ survey[questionNumber - 1].data.question }}</h5>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Multi Select

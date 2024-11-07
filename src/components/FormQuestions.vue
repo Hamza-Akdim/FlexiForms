@@ -1,13 +1,11 @@
 <template>
-  <div class="formQuestion">
-    <div class="scroll-div">
-      <NavBar />
+  <div class="h-full max-w-[1500px] mx-auto flex flex-col items-center gap-4 relative z-0 pb-5">
+    <NavBar />
 
-      <div style="width: 85%; padding-top: 5rem;">
-        <NewForm />
-        <AddQuestion />
-        <ThankQuestion />
-      </div>
+    <div class="h-full pt-20 pb-3 overflow-auto w-full">
+      <NewForm />
+      <AddQuestion />
+      <ThankQuestion />
     </div>
   </div>
 </template>
@@ -25,27 +23,20 @@ export default {
     NavBar,
     AddQuestion,
     NewForm,
-    ThankQuestion
+    ThankQuestion,
   },
 };
 </script>
 
 <style scoped>
-.formQuestion {
-  width: 50vw;
-  height: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 250 252/var(--tw-bg-opacity));
-}
-
 .scroll-div {
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
   display: flex;
   align-items: center;
   gap: 8px;
   flex-direction: column;
-  overflow: auto;
+  /* overflow: auto; */
   position: relative;
   z-index: 0;
   padding-bottom: 15px;

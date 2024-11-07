@@ -1,12 +1,13 @@
 <template>
-  <div class="parent">
+  <div class="parent mx-auto">
     <div>
       <button @click="displayCard()">
-        <div class="icon-div" :class="{ adjustReduisBorder: isDisplay }">
+        <div class="icon-div sm:min-w-[40px] md:min-w-[50px] min-h-[66px]" :class="{ adjustReduisBorder: isDisplay }">
           <v-icon icon="mdi-plus" class="icon" />
         </div>
         <div class="text-btn">
-          <div style="font-size: 18px">Add Question</div>
+          <!-- <div style="font-size: 18px">Add Question</div> -->
+          <div class="text-xl">Add Question</div>
           <div style="font-size: 12px; color: grey; margin-bottom: 5px">
             Add a new question to your form
           </div>
@@ -192,7 +193,7 @@ export default {
 <style scoped>
 .parent {
   padding: 0;
-  width: 100%;
+  width: 85%;
   margin-bottom: 20px;
   margin-top: 10px;
   border-radius: 8px;
@@ -208,7 +209,6 @@ button {
 
 .icon-div {
   background-color: rgb(102, 153, 204);
-  width: 8%;
   display: flex;
   justify-content: center;
   align-items: center;

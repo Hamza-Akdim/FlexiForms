@@ -1,5 +1,5 @@
 <template>
-  <div class="card-parent">
+  <div class="card-parent max-w-[550px] min-h-[300px]">
     <div class="close-btn">
       <button>
         <svg
@@ -54,8 +54,9 @@ export default {
 </script>
 
 <style scoped>
+/* 90% */
 .card-parent {
-  height: 80%;
+  /* height: 90%; */
   width: 80%;
   padding: 15px;
   background-color: white;

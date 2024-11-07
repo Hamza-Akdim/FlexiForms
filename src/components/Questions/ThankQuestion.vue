@@ -1,8 +1,8 @@
 <template>
-  <div class="parent">
+  <div class="parent mx-auto">
     <div>
       <button @click="handleClickBtn()" class="btn-number">
-        <div class="icon-div" :class="{ adjustReduisBorder: isDisplay }">
+        <div class="icon-div sm:min-w-[40px] md:min-w-[50px]" :class="{ adjustReduisBorder: isDisplay }">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
@@ -147,7 +147,7 @@ export default {
 <style scoped>
 .parent {
   padding: 0;
-  width: 100%;
+  width: 85%;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -162,7 +162,7 @@ export default {
 
 .icon-div {
   background-color: rgb(169, 169, 169);
-  min-width: 8%;
+  min-height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;

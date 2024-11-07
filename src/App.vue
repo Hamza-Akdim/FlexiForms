@@ -14,8 +14,8 @@ export default {
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-}
+} */
 
 </style>

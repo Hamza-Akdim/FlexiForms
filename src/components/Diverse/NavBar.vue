@@ -1,30 +1,34 @@
 <template>
-  <div class="nav-bar">
+  <div
+    class="w-full md:w-[51%] fixed left-0 z-[5] bg-white flex justify-evenly items-center border-x-2 border-b-2 border-solid border-custom-blue pt-1 "
+  >
     <button
-      class="div-icon"
+      class="div-icon flex flex-col justify-between items-center  p-1 "
       :class="{ clickColor: setColor[0] }"
       @click="triggerEvent(0)"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-file-text"
-        viewBox="0 0 16 16"
-      >
-        <path
-          d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"
-        />
-        <path
-          d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"
-        />
-      </svg>
-      Questions
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-file-text"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"
+          />
+          <path
+            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"
+          />
+        </svg>
+      </div>
+      <div>Questions</div>
     </button>
 
     <button
-      class="div-icon"
+      class="flex flex-col justify-center items-center  p-1 px-4"
       :class="{ clickColor: setColor[1] }"
       @click="triggerEvent(1)"
     >
@@ -44,7 +48,7 @@
     </button>
 
     <button
-      class="div-icon"
+      class="flex flex-col justify-center items-center  p-1 px-4"
       :class="{ clickColor: setColor[2] }"
       @click="triggerEvent(2)"
     >
@@ -81,10 +85,10 @@ export default {
   methods: {
     triggerEvent(i) {
       this.setColor.forEach((value, index) => {
-        if(i!=index){
-          this.setColor[index]= false
-        }else {
-          this.setColor[index] = true
+        if (i != index) {
+          this.setColor[index] = false;
+        } else {
+          this.setColor[index] = true;
         }
       });
     },
@@ -93,24 +97,21 @@ export default {
 </script>
 
 <style scoped>
-.nav-bar {
-  width: 50%;
+/* .nav-bar {
   left: 0px;
-  height: 10%;
   position: fixed;
   z-index: 4;
   background-color: white;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: 2px solid rgb(0, 51, 102);
-}
+} */
 
-.div-icon {
+/* .div-icon {
   cursor: pointer;
   height: 98%;
   padding: 0 12px 0 12px;
-}
+} */
 
 .clickColor {
   border-bottom: 3px solid rgb(102, 153, 204);

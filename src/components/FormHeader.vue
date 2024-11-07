@@ -1,19 +1,37 @@
 <template>
-  <div class="nav-bar">
-    <v-toolbar density="compact" style="background-color: rgb(0,51,102); color: white">
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+  <div class="w-full bg-[#003366] text-white p-1 px-5 flex justify-between">
+    <div class="w-full flex items-center gap-3">
+      <img class="w-[50px] h-[50px]" src="formIcon.png" alt="/" />
+      <div class="md:text-2xl sm:text-xl text-lg font-bold">FlexiForms</div>
+    </div>
+    <div class="flex justify-between items-center gap-4">
+      <div class="flex gap-4">
+        <div
+          class="text-base cursor-pointer font-medium border-2 border-white text-white p-[6px] min-w-20 rounded-md text-center"
+        >
+          Save
+        </div>
+        <div
+          class="text-base cursor-pointer font-medium border-2 border-white text-white p-[6px] min-w-20 rounded-md text-center"
+        >
+          Publish
+        </div>
+      </div>
+      <div>
+        <img
+          class="cursor-pointer max-w-[35px]"
+          src="moreOptions.png"
+          alt="/"
+        />
+      </div>
+    </div>
 
-      <v-toolbar-title >FlexiForms</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn class="button" variant="outlined" style="color: white;"> Save </v-btn>
-      <v-btn class="button" variant="outlined" style="color: white;"> Publish </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-toolbar>
+    <!-- <div class="h-full w-[40%] bg-[#003366] fixed top-0 left-0 z-10">
+      <div class="w-full flex items-center gap-3 m-2">
+        <img class="w-[50px] h-[50px]" src="formIcon.png" alt="/" />
+        <div class="md:text-2xl sm:text-xl text-lg font-bold">FlexiForms</div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -25,7 +43,7 @@ export default {
 
 <style scoped>
 .nav-bar {
-  width:100vw;
+  width: 100vw;
   height: 8%;
   /* position: fixed; */
 }
