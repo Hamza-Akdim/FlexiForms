@@ -1,7 +1,7 @@
 <template>
   <div class="w-full bg-[#003366] text-white p-1 px-5 flex justify-between">
     <div class="w-full flex items-center gap-3">
-      <img class="w-[50px] h-[50px]" src="formIcon.png" alt="/" />
+      <img class="w-[50px] h-[50px]" src="FormIcon.png" alt="/" />
       <div class="md:text-2xl sm:text-xl text-lg font-bold">FlexiForms</div>
     </div>
     <div class="flex justify-between items-center gap-4">
